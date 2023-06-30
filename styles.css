@@ -1,8 +1,13 @@
 body {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+
+
     background: linear-gradient(to bottom, black, rgb(83, 5, 5), black);
 }
 
@@ -29,74 +34,41 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: rainbow_animation 9s linear infinite;
+    animation: text_animation 9s linear infinite;
     background-size: 200% 100%;
 }
-
-@keyframes rainbow_animation {
-
-    0% {
-        background-position: 800% 0%;
-    }
-
-}
-
 
 .green_text_animated {
     background: repeating-linear-gradient(to left, rgb(30, 90, 30), green, rgb(30, 90, 30), green, rgb(30, 90, 30));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: green_animation 12s linear infinite;
+    animation: text_animation 12s linear infinite;
     background-size: 200% 100%;
 }
-
 
 .water_text_animated {
     background: repeating-linear-gradient(to left, blue, lightblue, blue, lightblue, blue);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: green_animation 12s linear infinite;
+    animation: text_animation 12s linear infinite;
     background-size: 200% 100%;
 }
-
 
 .fire_text_animated {
     background: repeating-linear-gradient(to left, orange, red, orange, red, orange);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: green_animation 12s linear infinite;
+    animation: text_animation 12s linear infinite;
     background-size: 200% 100%;
 }
 
-@keyframes green_animation {
+@keyframes text_animation {
 
     0% {
         background-position: 800% 0%;
     }
 
-}
-
-.seletor {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.botaoTreino {
-    background-color: transparent;
-    color: brown;
-    border: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.5s;
-}
-
-.botaoTreino:hover {
-    transform: scale(1.2);
 }
