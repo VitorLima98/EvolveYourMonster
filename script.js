@@ -14,14 +14,20 @@ button.onclick = function () {
 grass.onclick = function () {
     document.getElementById('titulo').className = '';
     document.getElementById('titulo').classList.add('green_text_animated')
-    document.getElementById('monster').checkVisibility;
+    document.getElementById('monster').src = "./001.png";
+    document.getElementById('escolherBicho').style.display = "none";
 }
+
 water.onclick = function () {
     document.getElementById('titulo').className = '';
     document.getElementById('titulo').classList.add('water_text_animated')
+    document.getElementById('monster').src = "./004.png";
+    document.getElementById('escolherBicho').style.display = "none";
 }
 fire.onclick = function () {
     document.getElementById('titulo').className = '';
     document.getElementById('titulo').classList.add('fire_text_animated')
+    document.getElementById('monster').src = "./007.png";
+    document.getElementById('escolherBicho').style.display = "none";
 }
 
