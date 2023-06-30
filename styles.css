@@ -2,14 +2,13 @@ body {
     height: 100vh;
     align-items: center;
     display: flex;
-
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 
-
-
     background: linear-gradient(to bottom, black, rgb(83, 5, 5), black);
 }
+
 
 h1 {
     font-family: sans-serif;
@@ -43,12 +42,12 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: text_animation 12s linear infinite;
+    animation: text_animation 9s linear infinite;
     background-size: 200% 100%;
 }
 
 .water_text_animated {
-    background: repeating-linear-gradient(to left, blue, lightblue, blue, lightblue, blue);
+    background: repeating-linear-gradient(to left, blue, rgb(0, 191, 255), blue, rgb(0, 191, 255), blue);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -61,7 +60,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: text_animation 12s linear infinite;
+    animation: text_animation 9s linear infinite;
     background-size: 200% 100%;
 }
 
@@ -71,4 +70,37 @@ h1 {
         background-position: 800% 0%;
     }
 
+}
+
+
+#botaoTreino {
+    padding: 5px;
+    background-color: rgb(120, 61, 61);
+
+}
+
+#seletor {
+    padding: 5px;
+    display: flex;
+}
+
+#grass {
+
+    padding: 7px;
+    background-color: rgb(9, 154, 41);
+}
+
+#water {
+    padding: 7px;
+    background-color: rgb(0, 191, 255);
+}
+
+#fire {
+    padding: 7px;
+    background-color: rgb(255, 68, 0);
+}
+
+button {
+
+    border-radius: 7px 9px 7px;
 }

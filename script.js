@@ -14,6 +14,7 @@ button.onclick = function () {
 grass.onclick = function () {
     document.getElementById('titulo').className = '';
     document.getElementById('titulo').classList.add('green_text_animated')
+    document.getElementById('monster').checkVisibility;
 }
 water.onclick = function () {
     document.getElementById('titulo').className = '';
