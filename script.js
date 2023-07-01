@@ -16,7 +16,7 @@ button.onclick = function () {
     button.innerHTML = "Força: " + count;
     if (count > 6 * stage && stage < 5) {
         stageUp = true;
-        document.getElementById('evoluirBotao').style.display = "block";
+        evoluir();
     }
 };
 
@@ -102,7 +102,7 @@ especie = function () {
     }
 }
 
-evoluirBotao.onclick = function () {
+evoluir = function () {
     let ID = ++stage;
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
@@ -111,22 +111,22 @@ evoluirBotao.onclick = function () {
     if (stage < 4) {
         alert("EVOLUTION!");
         document.getElementById('monster').src = "./00" + ID + ".png";
-        document.getElementById('monster').style.width = "350px";
-        document.getElementById('monster').style.height = "350px";
+        document.getElementById('monster').style.width = "310px";
+        document.getElementById('monster').style.height = "310px";
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
         document.getElementById('monster').src = "./00" + ID + "M.png";
-        document.getElementById('monster').style.width = "400px";
-        document.getElementById('monster').style.height = "400px";
+        document.getElementById('monster').style.width = "320px";
+        document.getElementById('monster').style.height = "320px";
     }
     else if (stage === 5) {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
         document.getElementById('monster').src = "./00" + ID + "X.png";
-        document.getElementById('monster').style.width = "500px";
-        document.getElementById('monster').style.height = "500px";
+        document.getElementById('monster').style.width = "330px";
+        document.getElementById('monster').style.height = "330px";
         document.getElementById('evoluirBotao').style.display = "none";
     }
     especie();
