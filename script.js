@@ -111,22 +111,22 @@ evoluirBotao.onclick = function () {
     if (stage < 4) {
         alert("EVOLUTION!");
         document.getElementById('monster').src = "./00" + ID + ".png";
-        document.getElementById('monster').style.width = "400px";
-        document.getElementById('monster').style.height = "400px";
+        document.getElementById('monster').style.width = "350px";
+        document.getElementById('monster').style.height = "350px";
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
         document.getElementById('monster').src = "./00" + ID + "M.png";
-        document.getElementById('monster').style.width = "500px";
-        document.getElementById('monster').style.height = "500px";
+        document.getElementById('monster').style.width = "400px";
+        document.getElementById('monster').style.height = "400px";
     }
     else if (stage === 5) {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
         document.getElementById('monster').src = "./00" + ID + "X.png";
-        document.getElementById('monster').style.width = "600px";
-        document.getElementById('monster').style.height = "600px";
+        document.getElementById('monster').style.width = "500px";
+        document.getElementById('monster').style.height = "500px";
         document.getElementById('evoluirBotao').style.display = "none";
     }
     especie();
