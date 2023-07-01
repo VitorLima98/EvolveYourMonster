@@ -78,10 +78,6 @@ h1 {
 }
 
 
-#botaoTreino {
-    padding: 100px;
-    background-color: rgb(120, 61, 61);
-}
 
 #seletor {
     padding: 5px;
@@ -106,6 +102,7 @@ h1 {
 }
 
 button {
-
+    cursor: pointer;
+    padding: 15px;
     border-radius: 7px 9px 7px;
 }
