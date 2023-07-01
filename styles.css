@@ -75,8 +75,6 @@ h1 {
 
 }
 
-
-
 #seletor {
     padding: 5px;
     display: flex;
@@ -102,4 +100,22 @@ button {
     cursor: pointer;
     padding: 15px;
     border-radius: 7px 9px 7px;
+}
+
+#monster {
+
+    animation: wiggle 3s ease-out infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        scale: 1.0;
+    }
+
+    50% {
+        scale: 1.03;
+    }
+
 }

@@ -6,15 +6,13 @@ var grass = document.getElementById("grass"),
     fire = document.getElementById("fire");
 var stageUp = false, stage = 1;
 
-var actionEvolve = document.getElementById("evoluirBotao");
 
 document.getElementById('botaoT').style.display = "none";
-document.getElementById('evoluirBotao').style.display = "none";
 
 button.onclick = function () {
     count++;
-    button.innerHTML = "Força: " + count;
-    if (count > 6 * stage && stage < 5) {
+    button.innerHTML = "Nível: " + count;
+    if (count > ((type - 1) * 3 + 4 * stage) && stage < 5) {
         stageUp = true;
         evoluir();
     }
@@ -127,8 +125,8 @@ evoluir = function () {
         document.getElementById('monster').src = "./00" + ID + "X.png";
         document.getElementById('monster').style.width = "330px";
         document.getElementById('monster').style.height = "330px";
-        document.getElementById('evoluirBotao').style.display = "none";
     }
     especie();
-    document.getElementById('evoluirBotao').style.display = "none";
+
 }
+
