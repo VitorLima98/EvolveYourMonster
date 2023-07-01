@@ -102,12 +102,27 @@ button {
     border-radius: 7px 9px 7px;
 }
 
-#monster {
-
-    animation: wiggle 3s ease-out infinite;
+.monster {
+    animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(5deg);
+    }
+
+    75% {
+        transform: rotateZ(-7deg);
+    }
+}
+
+@keyframes pulse {
 
     0%,
     100% {
@@ -118,4 +133,8 @@ button {
         scale: 1.03;
     }
 
+}
+
+.egg {
+    animation: wiggle 3s ease-in-out infinite;
 }

@@ -6,8 +6,9 @@ var grass = document.getElementById("grass"),
     fire = document.getElementById("fire");
 var stageUp = false, stage = 1;
 
-
 document.getElementById('botaoT').style.display = "none";
+
+document.getElementById('monster').classList.add('egg');
 
 button.onclick = function () {
     count++;
@@ -26,6 +27,8 @@ grass.onclick = function () {
     document.getElementById('botaoT').style.display = "block";
     type = 1;
     especie();
+    document.getElementById('monster').classList.remove('egg');
+    document.getElementById('monster').classList.add('monster');
 }
 
 fire.onclick = function () {
@@ -36,6 +39,8 @@ fire.onclick = function () {
     document.getElementById('botaoT').style.display = "block";
     type = 2;
     especie();
+    document.getElementById('monster').classList.remove('egg');
+    document.getElementById('monster').classList.add('monster');
 }
 
 water.onclick = function () {
@@ -46,6 +51,8 @@ water.onclick = function () {
     document.getElementById('botaoT').style.display = "block";
     type = 3;
     especie();
+    document.getElementById('monster').classList.remove('egg');
+    document.getElementById('monster').classList.add('monster');
 }
 
 
