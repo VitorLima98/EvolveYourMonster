@@ -20,6 +20,8 @@ h1 {
     width: 100%;
     padding: 10px;
     text-align: center;
+    position: absolute;
+    top: 0vh;
     color: rgb(255, 255, 255);
 }
 
@@ -133,8 +135,26 @@ button {
         scale: 1.03;
     }
 
+
+}
+
+
+@keyframes train {
+
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+
 }
 
 .egg {
-    animation: wiggle 3s ease-in-out infinite;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+.train {
+    animation: train 2s ease-in-out;
 }

@@ -1,109 +1,116 @@
-var button = document.getElementById("click"), count = 0;
+var treinar = document.getElementById("treinar");
+var monster = document.getElementById('monster');
+var HUD = document.getElementById('HUD');
+var nomeEspecie = document.getElementById('especie');
+var titulo = document.getElementById("titulo");
+
+var att = document.getElementById("att");
+var chooseFight = document.getElementById("chooseFight");
+var chooseRun = document.getElementById("chooseRun");
+var enemy = document.getElementById("enemy");
+var fightScreen = document.getElementById("fightScreen");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
     water = document.getElementById("water"),
     fire = document.getElementById("fire");
-var stageUp = false, stage = 1;
+var stageUp = false, stage = 1, count = 1;
+//fight vars
+var hp = 100, maxHp = 250, e_Hp = 250, max_e_Hp = 100;
 
-document.getElementById('botaoT').style.display = "none";
+HUD.style.display = "none";
+fightScreen.style.display = "none";
 
-document.getElementById('monster').classList.add('egg');
+monster.classList.add('egg');
 
-button.onclick = function () {
+treinar.onclick = function () {
     count++;
-    button.innerHTML = "Nível: " + count;
+    treinar.innerHTML = "Nível: " + count;
     if (count > ((type - 1) * 3 + 4 * stage) && stage < 5) {
         stageUp = true;
         evoluir();
     }
+    this.animate([{ scale: 1.03 }], 300);
 };
 
 grass.onclick = function () {
-    document.getElementById('titulo').className = '';
-    document.getElementById('titulo').classList.add('green_text_animated')
-    document.getElementById('monster').src = "./001.png";
-    document.getElementById('escolherBicho').style.display = "none";
-    document.getElementById('botaoT').style.display = "block";
     type = 1;
-    especie();
-    document.getElementById('monster').classList.remove('egg');
-    document.getElementById('monster').classList.add('monster');
+    start();
+    titulo.classList.add('green_text_animated')
+    monster.src = "./001.png";
 }
 
 fire.onclick = function () {
-    document.getElementById('titulo').className = '';
-    document.getElementById('titulo').classList.add('fire_text_animated')
-    document.getElementById('monster').src = "./004.png";
-    document.getElementById('escolherBicho').style.display = "none";
-    document.getElementById('botaoT').style.display = "block";
     type = 2;
-    especie();
-    document.getElementById('monster').classList.remove('egg');
-    document.getElementById('monster').classList.add('monster');
+    start();
+    titulo.classList.add('fire_text_animated')
+    monster.src = "./004.png";
 }
 
 water.onclick = function () {
-    document.getElementById('titulo').className = '';
-    document.getElementById('titulo').classList.add('water_text_animated')
-    document.getElementById('monster').src = "./007.png";
-    document.getElementById('escolherBicho').style.display = "none";
-    document.getElementById('botaoT').style.display = "block";
     type = 3;
-    especie();
-    document.getElementById('monster').classList.remove('egg');
-    document.getElementById('monster').classList.add('monster');
+    start();
+    titulo.classList.add('water_text_animated')
+    monster.src = "./007.png";
 }
 
+start = function () {
+    especie();
+    titulo.className = '';
+    document.getElementById('monster').classList.remove('egg');
+    document.getElementById('monster').classList.add('monster');
+    document.getElementById('escolherBicho').style.display = "none";
+    HUD.style.display = "block";
+}
 
 especie = function () {
     //GRASS
     if (type === 1 && stage === 1)
-        document.getElementById('especie').innerHTML = "Bulbasaur";
+        nomeEspecie.innerHTML = "Bulbasaur";
     else if (type === 1 && stage === 2)
-        document.getElementById('especie').innerHTML = "Ivysaur";
+        nomeEspecie.innerHTML = "Ivysaur";
     else if (type === 1 && stage === 3)
-        document.getElementById('especie').innerHTML = "Venusaur";
+        nomeEspecie.innerHTML = "Venusaur";
     else if (type === 1 && stage === 4) {
-        document.getElementById('especie').innerHTML = "Mega Venusaur";
-        document.getElementById('especie').classList.add('green_text_animated')
+        nomeEspecie.innerHTML = "Mega Venusaur";
+        nomeEspecie.classList.add('green_text_animated')
     }
     else if (type === 1 && stage === 5) {
-        document.getElementById('especie').innerHTML = "G-MAX Venusaur";
-        document.getElementById('especie').className = '';
-        document.getElementById('especie').classList.add('rainbow_text_animated')
+        nomeEspecie.innerHTML = "G-MAX Venusaur";
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('rainbow_text_animated')
     }
     //FIRE
     if (type === 2 && stage === 1)
-        document.getElementById('especie').innerHTML = "Charmander";
+        nomeEspecie.innerHTML = "Charmander";
     else if (type === 2 && stage === 2)
-        document.getElementById('especie').innerHTML = "Charmeleon";
+        nomeEspecie.innerHTML = "Charmeleon";
     else if (type === 2 && stage === 3)
-        document.getElementById('especie').innerHTML = "Charizard";
+        nomeEspecie.innerHTML = "Charizard";
     else if (type === 2 && stage === 4) {
-        document.getElementById('especie').innerHTML = "Mega Charizard";
-        document.getElementById('especie').classList.add('fire_text_animated')
+        nomeEspecie.innerHTML = "Mega Charizard";
+        nomeEspecie.classList.add('fire_text_animated')
     }
     else if (type === 2 && stage === 5) {
-        document.getElementById('especie').innerHTML = "G-MAX Charizard";
-        document.getElementById('especie').className = '';
-        document.getElementById('especie').classList.add('rainbow_text_animated')
+        nomeEspecie.innerHTML = "G-MAX Charizard";
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('rainbow_text_animated')
     }
     //WATER
     if (type === 3 && stage === 1)
-        document.getElementById('especie').innerHTML = "Squirtle";
+        nomeEspecie.innerHTML = "Squirtle";
     else if (type === 3 && stage === 2)
-        document.getElementById('especie').innerHTML = "Wartortle";
+        nomeEspecie.innerHTML = "Wartortle";
     else if (type === 3 && stage === 3)
-        document.getElementById('especie').innerHTML = "Blastoise";
+        nomeEspecie.innerHTML = "Blastoise";
     else if (type === 3 && stage === 4) {
-        document.getElementById('especie').innerHTML = "Mega Blastoise";
-        document.getElementById('especie').classList.add('water_text_animated')
+        nomeEspecie.innerHTML = "Mega Blastoise";
+        nomeEspecie.classList.add('water_text_animated')
     }
     else if (type === 3 && stage === 5) {
-        document.getElementById('especie').innerHTML = "G-MAX Blastoise";
-        document.getElementById('especie').className = '';
-        document.getElementById('especie').classList.add('rainbow_text_animated')
+        nomeEspecie.innerHTML = "G-MAX Blastoise";
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('rainbow_text_animated')
     }
 }
 
@@ -112,6 +119,7 @@ evoluir = function () {
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
 
+    monster.animate([{ transform: "rotateY(360deg)" }], 300);
 
     if (stage < 4) {
         alert("EVOLUTION!");
@@ -134,6 +142,74 @@ evoluir = function () {
         document.getElementById('monster').style.height = "330px";
     }
     especie();
+}
+
+chooseFight.onclick = function () {
+    e_Hp = max_e_Hp;
+    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+
+    nomeEspecie.style.display = "none";
+    HUD.style.display = "none";
+    fightScreen.style.display = "block";
+    titulo.innerHTML = "BATTLE!"
+
+    monster.style.position = 'absolute';
+    monster.style.bottom = '50px';
+    monster.style.left = '50px';
+
+    enemy.style.position = 'absolute';
+    enemy.style.top = '50px';
+    enemy.style.right = '50px';
+    document.getElementById('enemyPic').src = "./enemy1.png";
+
 
 }
 
+att.onclick = function () {
+    e_Hp -= count * stage;
+    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+
+    monster.animate([
+        {
+            transform: 'translateX(0%)'
+        },
+        {
+            transform: 'translateX(15%)'
+        }
+    ], {
+        duration: 100
+    });
+
+    enemy.animate([{ scale: 0.93 }], 300);
+
+    if (e_Hp < 1) {
+        //VITORIA
+        fightScreen.style.display = "none";
+        alert("Vitoria! Recompensa: 10 Nv");
+        count += 10;
+        restoreHUD();
+
+        if (count > ((type - 1) * 3 + 4 * stage) && stage < 5) {
+            stageUp = true;
+            evoluir();
+        }
+
+        max_e_Hp += 50;
+    }
+
+}
+
+chooseRun.onclick = function () {
+    alert("Escaped!");
+    fightScreen.style.display = "none";
+    restoreHUD();
+}
+
+restoreHUD = function () {
+    nomeEspecie.style.display = "block";
+    HUD.style.display = "flex";
+    titulo.innerHTML = "Evolve to fight";
+    monster.style.position = '';
+    chooseFight.style.display = 'block';
+    treinar.innerHTML = "Nível: " + count;
+}
