@@ -154,11 +154,11 @@ chooseFight.onclick = function () {
     titulo.innerHTML = "BATTLE!"
 
     monster.style.position = 'absolute';
-    monster.style.bottom = '50px';
+    monster.style.bottom = '0px';
     monster.style.left = '50px';
 
     enemy.style.position = 'absolute';
-    enemy.style.top = '50px';
+    enemy.style.top = '0px';
     enemy.style.right = '50px';
     document.getElementById('enemyPic').src = "./enemy1.png";
 
