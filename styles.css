@@ -168,6 +168,14 @@ button {
 
 }
 
+#enemyPic {
+    z-index: -3;
+}
+
+#shot {
+    z-index: -2;
+}
+
 #top-menu {
     top: 0px;
 }
@@ -183,7 +191,9 @@ button {
 
     background: linear-gradient(to top, black, rgb(100, 0, 0), rgb(100, 0, 0), rgb(100, 0, 0), black);
 
+
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 1;
 }

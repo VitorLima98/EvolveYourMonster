@@ -9,6 +9,7 @@ var chooseFight = document.getElementById("chooseFight");
 var chooseRun = document.getElementById("chooseRun");
 var enemy = document.getElementById("enemy");
 var fightScreen = document.getElementById("fightScreen");
+var shot = document.getElementById("shot");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -157,33 +158,26 @@ chooseFight.onclick = function () {
     titulo.innerHTML = "BATTLE!"
 
     monster.style.position = 'absolute';
-    monster.style.bottom = '50px';
-    monster.style.left = '50px';
+    monster.style.bottom = '5vh';
+    monster.style.left = '5vh';
 
     enemy.style.position = 'absolute';
-    enemy.style.top = '50px';
-    enemy.style.right = '50px';
+    enemy.style.top = '5vh';
+    enemy.style.right = '5vh';
+    enemy.style.zIndex = -3;
     document.getElementById('enemyPic').src = "./enemy1.png";
 
-
+    shot.src = "./att" + type + ".png";
+    shot.style.display = "none";
 }
 
 att.onclick = function () {
     e_Hp -= count * stage;
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+    attackAnimation();
 
-    monster.animate([
-        {
-            transform: 'translateX(0%)'
-        },
-        {
-            transform: 'translateX(15%)'
-        }
-    ], {
-        duration: 100
-    });
 
-    enemy.animate([{ scale: 0.93 }], 300);
+    document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
 
     if (e_Hp < 1) {
         //VITORIA
@@ -210,4 +204,38 @@ restoreHUD = function () {
     monster.style.position = '';
     chooseFight.style.display = 'block';
     treinar.innerHTML = "Nível: " + count;
+}
+
+attackAnimation = function () {
+    shot.style.display = "block";
+
+    monster.animate([
+        {
+            transform: 'translate(0%, 0%)'
+        },
+        {
+            transform: 'translate(10%, -10%)'
+        }
+    ], {
+        duration: 100
+    });
+
+    shot.animate([
+        {
+            transform: 'translate(0vh, 0vh)',
+        },
+        {
+            transform: 'translate(200vh, -50vh)',
+        }
+    ], {
+        duration: 150
+    });
+
+    shot.style.position = 'absolute';
+    shot.style.bottom = '50px';
+    shot.style.left = '50px';
+    shot.style.width = "310px";
+    shot.style.height = "310px";
+    setTimeout(function () { shot.style.display = "none"; }, 150);
+
 }
