@@ -167,8 +167,10 @@ chooseFight.onclick = function () {
     enemy.style.zIndex = -3;
     document.getElementById('enemyPic').src = "./enemy1.png";
 
-    shot.src = "./att" + type + ".png";
     shot.style.display = "none";
+    shot.src = "./att" + type + ".png";
+    shot.style.width = "100px";
+    shot.style.height = "100px";
 }
 
 att.onclick = function () {
@@ -209,7 +211,8 @@ restoreHUD = function () {
 
 attackAnimation = function () {
     shot.style.display = "block";
-
+    shot.style.width = "100px";
+    shot.style.height = "100px";
     monster.animate([
         {
             transform: 'translate(0%, 0%)'
