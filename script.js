@@ -26,7 +26,7 @@ monster.classList.add('egg');
 treinar.onclick = function () {
     count++;
     treinar.innerHTML = "Nível: " + count;
-    if (count > ((type - 1) * 3 + 4 * stage) && stage < 5) {
+    if (count > ((type - 1) * 4 + 12 * stage) && stage < 5) {
         stageUp = true;
         evoluir();
     }
