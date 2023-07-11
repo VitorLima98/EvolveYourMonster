@@ -211,8 +211,8 @@ restoreHUD = function () {
 
 attackAnimation = function () {
     shot.style.display = "block";
-    shot.style.width = "100px";
-    shot.style.height = "100px";
+    shot.style.width = "10px";
+    shot.style.height = "10px";
     monster.animate([
         {
             transform: 'translate(0%, 0%)'
