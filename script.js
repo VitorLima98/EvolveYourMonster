@@ -61,8 +61,8 @@ water.onclick = function () {
 start = function () {
     especie();
     titulo.className = '';
-    document.getElementById('monster').classList.remove('egg');
-    document.getElementById('monster').classList.add('monster');
+    monster.classList.remove('egg');
+    monster.classList.add('monster');
     document.getElementById('escolherBicho').style.display = "none";
     HUD.style.display = "block";
 }
@@ -127,23 +127,23 @@ evoluir = function () {
 
     if (stage < 4) {
         alert("EVOLUTION!");
-        document.getElementById('monster').src = "./00" + ID + ".png";
-        document.getElementById('monster').style.width = "310px";
-        document.getElementById('monster').style.height = "310px";
+        monster.src = "./00" + ID + ".png";
+        monster.style.width = "310px";
+        monster.style.height = "310px";
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
-        document.getElementById('monster').src = "./00" + ID + "M.png";
-        document.getElementById('monster').style.width = "320px";
-        document.getElementById('monster').style.height = "320px";
+        monster.src = "./00" + ID + "M.png";
+        monster.style.width = "320px";
+        monster.style.height = "320px";
     }
     else if (stage === 5) {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
-        document.getElementById('monster').src = "./00" + ID + "X.png";
-        document.getElementById('monster').style.width = "330px";
-        document.getElementById('monster').style.height = "330px";
+        monster.src = "./00" + ID + "X.png";
+        monster.style.width = "330px";
+        monster.style.height = "330px";
     }
     especie();
 }
@@ -195,6 +195,7 @@ chooseRun.onclick = function () {
     alert("Escaped!");
     fightScreen.style.display = "none";
     restoreHUD();
+    max_e_Hp += 15;
 }
 
 restoreHUD = function () {
