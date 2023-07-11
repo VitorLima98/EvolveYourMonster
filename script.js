@@ -25,14 +25,17 @@ monster.classList.add('egg');
 
 treinar.onclick = function () {
     count++;
-    treinar.innerHTML = "Nível: " + count;
-    if (count > ((type - 1) * 4 + 12 * stage) && stage < 5) {
-        stageUp = true;
-        evoluir();
-    }
+    treinar.innerHTML = "XP: " + count;
     this.animate([{ scale: 1.03 }], 300);
+    checkEvolve();
 };
 
+checkEvolve = function () {
+    if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
+        evoluir();
+    }
+
+}
 grass.onclick = function () {
     type = 1;
     start();
@@ -145,7 +148,7 @@ evoluir = function () {
 }
 
 chooseFight.onclick = function () {
-    e_Hp = max_e_Hp;
+    e_Hp = max_e_Hp + + count % 5 - 3;
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
 
     nomeEspecie.style.display = "none";
@@ -185,16 +188,11 @@ att.onclick = function () {
     if (e_Hp < 1) {
         //VITORIA
         fightScreen.style.display = "none";
-        alert("Vitoria! Recompensa: 10 Nv");
+        alert("Vitoria! Recompensa: 10 XP");
         count += 10;
         restoreHUD();
-
-        if (count > ((type - 1) * 3 + 4 * stage) && stage < 5) {
-            stageUp = true;
-            evoluir();
-        }
-
-        max_e_Hp += 50;
+        checkEvolve();
+        max_e_Hp += 110;
     }
 
 }
