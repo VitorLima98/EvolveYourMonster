@@ -267,7 +267,8 @@ restoreHUD = function () {
     monster.style.position = '';
     chooseFight.style.display = 'block';
     treinar.innerHTML = "Nível: " + count;
-    vida.innerHTML = "Vida:" + hp;
+    vida.style.position = 'initial';
+
 
 }
 
