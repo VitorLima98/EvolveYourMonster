@@ -178,9 +178,6 @@ att.onclick = function () {
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
     attackAnimation();
 
-
-    document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
-
     if (e_Hp < 1) {
         //VITORIA
         fightScreen.style.display = "none";
@@ -208,13 +205,13 @@ restoreHUD = function () {
     chooseFight.style.display = 'block';
     treinar.innerHTML = "Nível: " + count;
 }
-let shotDuration = 200;
+
+let shotDuration = 500;
 attackAnimation = function () {
     shot.style.display = "block";
     shot.style.width = "10px";
     shot.style.height = "10px";
 
-    enemy.getOff
     monster.animate([
         {
             transform: 'translate(0%, 0%)'
@@ -228,10 +225,10 @@ attackAnimation = function () {
 
     shot.animate([
         {
-            transform: "translate(0, 0)"
+            transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(120vw, -105vh)"
+            transform: "translate(100vw, -80vh)"
         }
     ], {
         duration: shotDuration
@@ -242,14 +239,13 @@ attackAnimation = function () {
     shot.style.left = monster.style.left;
     shot.style.width = "100px";
     shot.style.height = "100px";
-    setTimeout(function () { shot.style.display = "none"; }, shotDuration);
-
+    setTimeout(function () { shotAway() }, shotDuration);
+    setTimeout(function () { enemyAnimate() }, shotDuration * 0.8);
 }
 
-function coords(e) {
-    const rect = e.getBoundingClientRect();
-    return {
-        left: rect.left,
-        top: rect.top
-    };
+shotAway = function () {
+    shot.style.display = "none";
+}
+enemyAnimate = function () {
+    document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
 }
