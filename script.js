@@ -208,11 +208,13 @@ restoreHUD = function () {
     chooseFight.style.display = 'block';
     treinar.innerHTML = "Nível: " + count;
 }
-
+let shotDuration = 200;
 attackAnimation = function () {
     shot.style.display = "block";
     shot.style.width = "10px";
     shot.style.height = "10px";
+
+    enemy.getOff
     monster.animate([
         {
             transform: 'translate(0%, 0%)'
@@ -240,6 +242,14 @@ attackAnimation = function () {
     shot.style.left = '50px';
     shot.style.width = "310px";
     shot.style.height = "310px";
-    setTimeout(function () { shot.style.display = "none"; }, 150);
+    setTimeout(function () { shot.style.display = "none"; }, shotDuration);
 
+}
+
+function coords(e) {
+    const rect = e.getBoundingClientRect();
+    return {
+        left: rect.left,
+        top: rect.top
+    };
 }
