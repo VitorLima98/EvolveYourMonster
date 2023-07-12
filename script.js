@@ -238,10 +238,10 @@ attackAnimation = function () {
     });
 
     shot.style.position = 'absolute';
-    shot.style.bottom = '50px';
-    shot.style.left = '50px';
-    shot.style.width = "310px";
-    shot.style.height = "310px";
+    shot.style.bottom = monster.style.bottom;
+    shot.style.left = monster.style.left;
+    shot.style.width = "100px";
+    shot.style.height = "100px";
     setTimeout(function () { shot.style.display = "none"; }, shotDuration);
 
 }
