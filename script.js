@@ -228,13 +228,13 @@ attackAnimation = function () {
 
     shot.animate([
         {
-            transform: 'translate(0vh, 0vh)',
+            transform: "translate(0, 0)"
         },
         {
-            transform: 'translate(200vh, -50vh)',
+            transform: "translate(120vw, -105vh)"
         }
     ], {
-        duration: 150
+        duration: shotDuration
     });
 
     shot.style.position = 'absolute';
