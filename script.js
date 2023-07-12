@@ -3,6 +3,7 @@ var monster = document.getElementById('monster');
 var HUD = document.getElementById('HUD');
 var nomeEspecie = document.getElementById('especie');
 var titulo = document.getElementById("titulo");
+var vida = document.getElementById("vida");
 
 var att = document.getElementById("att");
 var chooseFight = document.getElementById("chooseFight");
@@ -10,6 +11,7 @@ var chooseRun = document.getElementById("chooseRun");
 var enemy = document.getElementById("enemy");
 var fightScreen = document.getElementById("fightScreen");
 var shot = document.getElementById("shot");
+var enemyShot = document.getElementById("eShot");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -17,12 +19,11 @@ var grass = document.getElementById("grass"),
     fire = document.getElementById("fire");
 var stageUp = false, stage = 1, count = 1;
 //fight vars
-var hp = 100, maxHp = 250, e_Hp = 250, max_e_Hp = 100;
+var hp = 100, maxHp = 100, e_Hp = 250, max_e_Hp = 100;
 
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 
-monster.classList.add('egg');
 
 treinar.onclick = function () {
     count++;
@@ -37,6 +38,7 @@ checkEvolve = function () {
     }
 
 }
+
 grass.onclick = function () {
     type = 1;
     start();
@@ -65,6 +67,16 @@ start = function () {
     monster.classList.add('monster');
     document.getElementById('escolherBicho').style.display = "none";
     HUD.style.display = "block";
+
+    shot.style.display = "none";
+    shot.src = "./att" + type + ".png";
+
+    eShot.style.display = "none";
+    eShot.src = "./att1.png";
+    eShot.style.width = "100px";
+    eShot.style.height = "100px";
+    vida.innerHTML = "Vida:" + hp;
+    
 }
 
 especie = function () {
@@ -123,6 +135,7 @@ evoluir = function () {
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
 
+    shotDuration *=0.8;
     monster.animate([{ transform: "rotateY(360deg)" }], 300);
 
     if (stage < 4) {
@@ -150,6 +163,7 @@ evoluir = function () {
 
 chooseFight.onclick = function () {
     e_Hp = max_e_Hp + + count % 5 - 3;
+    hp=maxHp;
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
 
     nomeEspecie.style.display = "none";
@@ -161,56 +175,106 @@ chooseFight.onclick = function () {
     monster.style.bottom = '5vh';
     monster.style.left = '5vh';
 
+    vida.style.position = 'absolute';
+    vida.style.bottom = '0vh';
+    vida.style.left = '10vh';
+
     enemy.style.position = 'absolute';
     enemy.style.top = '5vh';
     enemy.style.right = '5vh';
     enemy.style.zIndex = -3;
     document.getElementById('enemyPic').src = "./enemy1.png";
 
-    shot.style.display = "none";
-    shot.src = "./att" + type + ".png";
-    shot.style.width = "100px";
-    shot.style.height = "100px";
+    stopfight = setInterval(function(){ enemyAttack()},1500);
+    
 }
 
 att.onclick = function () {
-    e_Hp -= count * stage;
-    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
-    attackAnimation();
+    att.disabled = true;
+    setTimeout(function (){ att.disabled =false; } , shotDuration*1.2);
 
-    if (e_Hp < 1) {
-        //VITORIA
+    attackAnimation();
+    e_Hp -= count * stage;
+
+}
+
+victory = function (){
         fightScreen.style.display = "none";
         alert("Vitoria! Recompensa: 10 XP");
         count += 10;
         restoreHUD();
         checkEvolve();
         max_e_Hp += 110;
-    }
 
+        clearInterval(stopfight);
+}
+
+enemyAttack=function(){
+
+    enemy.animate([
+        {
+            transform: 'translate(0%, 0%)'
+        },
+        {
+            transform: 'translate(-10%, +10%)'
+        }
+    ], {
+        duration: 100
+    });
+    hp-=(10+max_e_Hp%5);
+
+    eShot.style.position = 'absolute';
+    eShot.style.top = enemy.style.top;
+    eShot.style.right = enemy.style.right;
+    eShot.style.display = "block";
+    shot.style.width = "100px";
+    shot.style.height = "100px";
+
+    setTimeout(function () { eShot.style.display = "none"; }, shotDuration);
+
+    eShot.style.display = "block"
+    eShot.animate([
+        {
+            transform: "translate(0px, 0px)"
+        },
+        {
+            transform: "translate(-100vw, 80vh)"
+        }
+    ], {
+        duration: shotDuration
+    });
+    
+    setTimeout(function () { playerAnimate() }, shotDuration * 0.8);
 }
 
 chooseRun.onclick = function () {
+  escape();
+}
+
+escape = function(){
     alert("Escaped!");
     fightScreen.style.display = "none";
     restoreHUD();
     max_e_Hp += 15;
+    clearInterval(stopfight);
 }
 
 restoreHUD = function () {
+    clearInterval(stopfight);
     nomeEspecie.style.display = "block";
     HUD.style.display = "flex";
     titulo.innerHTML = "Evolve to fight";
     monster.style.position = '';
     chooseFight.style.display = 'block';
     treinar.innerHTML = "Nível: " + count;
+    vida.innerHTML = "Vida:" + hp;
+
 }
 
-let shotDuration = 500;
+let shotDuration = 1000;
 attackAnimation = function () {
     shot.style.display = "block";
-    shot.style.width = "10px";
-    shot.style.height = "10px";
+
 
     monster.animate([
         {
@@ -239,13 +303,26 @@ attackAnimation = function () {
     shot.style.left = monster.style.left;
     shot.style.width = "100px";
     shot.style.height = "100px";
-    setTimeout(function () { shotAway() }, shotDuration);
+    setTimeout(function () { shot.style.display = "none"; }, shotDuration);
     setTimeout(function () { enemyAnimate() }, shotDuration * 0.8);
 }
 
-shotAway = function () {
-    shot.style.display = "none";
-}
 enemyAnimate = function () {
     document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
+    if(e_Hp <=0){
+        e_Hp=0;  
+    } 
+    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+    if(e_Hp<=0) {setTimeout(function (){ victory();; } , shotDuration*0.5);}
 }
+
+playerAnimate = function () {
+    monster.animate([{ scale: 0.93 }], 300);
+    document.getElementById("vida").innerHTML = "Vida: " + hp;
+    if(hp <=0){
+        alert("Derrota!");
+        escape();
+    } 
+    //document.getElementById("vida").innerHTML = "HP: " + hp;
+}
+
