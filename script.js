@@ -263,13 +263,13 @@ restoreHUD = function () {
     clearInterval(stopfight);
     nomeEspecie.style.display = "block";
     HUD.style.display = "flex";
-    titulo.innerHTML = "Evolve to fight";
+    titulo.innerHTML = "Get stronger";
     monster.style.position = '';
     chooseFight.style.display = 'block';
-    treinar.innerHTML = "Nível: " + count;
+    treinar.innerHTML = "XP: " + count;
     vida.style.position = 'initial';
-
-
+    hp=maxHp;
+    vida.innerHTML = "Vida: " + hp;
 }
 
 let shotDuration = 1000;
@@ -319,7 +319,7 @@ enemyAnimate = function () {
 
 playerAnimate = function () {
     monster.animate([{ scale: 0.93 }], 300);
-    document.getElementById("vida").innerHTML = "Vida: " + hp;
+    vida.innerHTML = "Vida: " + hp;
     if(hp <=0){
         alert("Derrota!");
         escape();
