@@ -7,11 +7,12 @@ var vida = document.getElementById("vida");
 
 var att = document.getElementById("att");
 var chooseFight = document.getElementById("chooseFight");
+var avoid = document.getElementById("avoid");
 var chooseRun = document.getElementById("chooseRun");
 var enemy = document.getElementById("enemy");
 var fightScreen = document.getElementById("fightScreen");
 var shot = document.getElementById("shot");
-var enemyShot = document.getElementById("eShot");
+var eShot = document.getElementById("eShot");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -19,18 +20,43 @@ var grass = document.getElementById("grass"),
     fire = document.getElementById("fire");
 var stageUp = false, stage = 1, count = 1;
 //fight vars
-var hp = 100, maxHp = 100, e_Hp = 250, max_e_Hp = 100;
+var hp = 100, maxHp = 100, etype = 1, e_Hp = 250, max_e_Hp = 100;
 
 HUD.style.display = "none";
 fightScreen.style.display = "none";
-
+chooseFight.style.display = "none";
+avoid.style.display = "none";
 
 treinar.onclick = function () {
     count++;
     treinar.innerHTML = "XP: " + count;
     this.animate([{ scale: 1.03 }], 300);
     checkEvolve();
-};
+    if ((Math.ceil(Math.random() * 10)) === 1) wildAppears();
+}
+
+wildAppears = function () {
+    etype = Math.ceil(Math.random() * 3);
+    let text = 'Algo selvagem apareceu! Parece ser do tipo ';
+    if (etype === 1) text += 'planta';
+    else if (etype === 2) text += 'fogo';
+    else text += 'água';
+    alert(text)
+    fightPrompt();
+
+}
+
+fightPrompt = function () {
+    treinar.style.display = "none";
+    chooseFight.style.display = "inline";
+    avoid.style.display = "inline";
+}
+
+avoid.onclick = function () {
+    treinar.style.display = "block";
+    chooseFight.style.display = "none";
+    avoid.style.display = "none";
+}
 
 checkEvolve = function () {
     if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
@@ -76,7 +102,7 @@ start = function () {
     eShot.style.width = "100px";
     eShot.style.height = "100px";
     vida.innerHTML = "Vida:" + hp;
-    
+
 }
 
 especie = function () {
@@ -134,42 +160,46 @@ evoluir = function () {
     let ID = ++stage;
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
+    maxHp += 25;
+    hp = maxHp;
 
-    shotDuration *=0.8;
+    shotDuration *= 0.8;
     monster.animate([{ transform: "rotateY(360deg)" }], 300);
 
     if (stage < 4) {
         alert("EVOLUTION!");
         monster.src = "./00" + ID + ".png";
-        monster.style.width = "310px";
-        monster.style.height = "310px";
+        monster.style.height = "200px";
+        monster.style.width = "200px"
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
         monster.src = "./00" + ID + "M.png";
-        monster.style.width = "320px";
-        monster.style.height = "320px";
+        monster.style.height = "250px";
+        monster.style.width = "250px"
     }
     else if (stage === 5) {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
         monster.src = "./00" + ID + "X.png";
-        monster.style.width = "330px";
-        monster.style.height = "330px";
+        monster.style.height = "270px";
+        monster.style.width = "270px"
     }
     especie();
 }
 
 chooseFight.onclick = function () {
-    e_Hp = max_e_Hp + + count % 5 - 3;
-    hp=maxHp;
+    avoid.style.display = "none";
+
+    e_Hp = max_e_Hp + count % 5 - 3;
+    hp = maxHp;
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
 
     nomeEspecie.style.display = "none";
     HUD.style.display = "none";
     fightScreen.style.display = "block";
-    titulo.innerHTML = "BATTLE!"
+    titulo.innerHTML = "BATALHA!"
 
     monster.style.position = 'absolute';
     monster.style.bottom = '5vh';
@@ -183,33 +213,33 @@ chooseFight.onclick = function () {
     enemy.style.top = '5vh';
     enemy.style.right = '5vh';
     enemy.style.zIndex = -3;
-    document.getElementById('enemyPic').src = "./enemy1.png";
+    document.getElementById('enemyPic').src = "./enemy" + etype + ".png";
+    eShot.src = "./att" + etype + ".png";
 
-    stopfight = setInterval(function(){ enemyAttack()},1500);
-    
+    stopfight = setInterval(function () { enemyAttack() }, 1500);
+
 }
 
 att.onclick = function () {
     att.disabled = true;
-    setTimeout(function (){ att.disabled =false; } , shotDuration*1.2);
+    e_Hp -= count * stage;
+    if (e_Hp > 0) {
+        setTimeout(function () { att.disabled = false; }, shotDuration * 1.2);
+    }
 
     attackAnimation();
-    e_Hp -= count * stage;
-
 }
 
-victory = function (){
-        fightScreen.style.display = "none";
-        alert("Vitoria! Recompensa: 10 XP");
-        count += 10;
-        restoreHUD();
-        checkEvolve();
-        max_e_Hp += 110;
-
-        clearInterval(stopfight);
+victory = function () {
+    fightScreen.style.display = "none";
+    alert("Vitoria! Recompensa: 10 XP");
+    count += 10;
+    restoreHUD();
+    checkEvolve();
+    max_e_Hp += 110;
 }
 
-enemyAttack=function(){
+enemyAttack = function () {
 
     enemy.animate([
         {
@@ -221,7 +251,7 @@ enemyAttack=function(){
     ], {
         duration: 100
     });
-    hp-=(10+max_e_Hp%5);
+    hp -= (1 + Math.floor(Math.random() * 10)) + 10;
 
     eShot.style.position = 'absolute';
     eShot.style.top = enemy.style.top;
@@ -243,16 +273,16 @@ enemyAttack=function(){
     ], {
         duration: shotDuration
     });
-    
+
     setTimeout(function () { playerAnimate() }, shotDuration * 0.8);
 }
 
 chooseRun.onclick = function () {
-  escape();
+    escapeBattle();
 }
 
-escape = function(){
-    alert("Escaped!");
+escapeBattle = function () {
+    alert("Fugiu em segurança!");
     fightScreen.style.display = "none";
     restoreHUD();
     max_e_Hp += 15;
@@ -263,13 +293,20 @@ restoreHUD = function () {
     clearInterval(stopfight);
     nomeEspecie.style.display = "block";
     HUD.style.display = "flex";
-    titulo.innerHTML = "Get stronger";
+    tituloNovo();
     monster.style.position = '';
-    chooseFight.style.display = 'block';
+    chooseFight.style.display = 'none';
     treinar.innerHTML = "XP: " + count;
     vida.style.position = 'initial';
-    hp=maxHp;
+    hp = maxHp;
     vida.innerHTML = "Vida: " + hp;
+    treinar.style.display = "block";
+}
+
+tituloNovo = function () {
+    if (count % 3 == 1) titulo.innerHTML = "Fique Forte!";
+    else if (count % 3 == 2) titulo.innerHTML = "Aventura Aguarda!";
+    else titulo.innerHTML = "Evolua e vença!";
 }
 
 let shotDuration = 1000;
@@ -310,20 +347,21 @@ attackAnimation = function () {
 
 enemyAnimate = function () {
     document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
-    if(e_Hp <=0){
-        e_Hp=0;  
-    } 
+    if (e_Hp <= 0) {
+        e_Hp = 0;
+        clearInterval(stopfight);
+    }
     document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
-    if(e_Hp<=0) {setTimeout(function (){ victory();; } , shotDuration*0.5);}
+    if (e_Hp <= 0) { setTimeout(function () { victory();; }, shotDuration * 0.5); }
 }
 
 playerAnimate = function () {
     monster.animate([{ scale: 0.93 }], 300);
     vida.innerHTML = "Vida: " + hp;
-    if(hp <=0){
+    if (hp <= 0) {
         alert("Derrota!");
-        escape();
-    } 
-    //document.getElementById("vida").innerHTML = "HP: " + hp;
+        escapeBattle();
+    }
+
 }
 
