@@ -22,6 +22,8 @@ var stageUp = false, stage = 1, count = 1;
 //fight vars
 var hp = 100, maxHp = 100, etype = 1, e_Hp = 250, max_e_Hp = 100;
 
+//inventory
+
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 chooseFight.style.display = "none";
@@ -183,8 +185,6 @@ evoluir = function () {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
         monster.src = "./00" + ID + "X.png";
-        monster.style.height = "270px";
-        monster.style.width = "270px"
     }
     especie();
 }
