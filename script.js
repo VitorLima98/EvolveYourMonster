@@ -228,7 +228,8 @@ chooseFight.onclick = function () {
 
 att.onclick = function () {
     att.disabled = true;
-    danoFeito = count * stage * effectiveness[type][etype];
+    danoFeito = Math.ceil(Math.random() * 6);
+    danoFeito += count * stage * effectiveness[type][etype];
     e_Hp -= danoFeito;
 
     if (e_Hp > 0) {
