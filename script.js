@@ -35,6 +35,10 @@ fightScreen.style.display = "none";
 chooseFight.style.display = "none";
 avoid.style.display = "none";
 
+monster.style.height = "25vh";
+monster.style.width = "25vh";
+
+
 treinar.onclick = function () {
     count++;
     treinar.innerHTML = "XP: " + count;
@@ -177,15 +181,11 @@ evoluir = function () {
     if (stage < 4) {
         alert("EVOLUTION!");
         monster.src = "./00" + ID + ".png";
-        monster.style.height = "200px";
-        monster.style.width = "200px"
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
         monster.src = "./00" + ID + "M.png";
-        monster.style.height = "250px";
-        monster.style.width = "250px"
     }
     else if (stage === 5) {
         ID -= 2;
