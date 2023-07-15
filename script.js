@@ -280,7 +280,7 @@ enemyAttack = function () {
             transform: 'translate(0%, 0%)'
         },
         {
-            transform: 'translate(-10%, +10%)'
+            transform: 'translate(-3%, +3%)'
         }
     ], {
         duration: 100
@@ -381,7 +381,7 @@ attackAnimation = function () {
 }
 
 enemyAnimate = function () {
-    document.getElementById("enemyPic").animate([{ scale: 0.93 }], 300);
+    enemyPic.animate([{ scale: 0.93 }], 300);
     if (e_Hp <= 0) {
         e_Hp = 0;
         clearInterval(stopfight);
