@@ -21,7 +21,10 @@ var grass = document.getElementById("grass"),
 var stageUp = false, stage = 1, count = 1;
 //fight vars
 var hp = 100, maxHp = 100, etype = 1, e_Hp = 250, max_e_Hp = 100;
-
+var effectiveness = [[1, 1, 1, 1],
+[1, 0.5, 0.5, 2],
+[1, 2, 0.5, 0.5],
+[1, 0.5, 2, 0.5]];
 //inventory
 
 HUD.style.display = "none";
@@ -40,9 +43,9 @@ treinar.onclick = function () {
 wildAppears = function () {
     etype = Math.ceil(Math.random() * 3);
     let text = 'Algo selvagem apareceu! Parece ser do tipo ';
-    if (etype === 1) text += 'planta';
-    else if (etype === 2) text += 'fogo';
-    else text += 'água';
+    if (etype === 1) text += 'planta...';
+    else if (etype === 2) text += 'fogo...';
+    else text += 'água...';
     alert(text)
     fightPrompt();
 
@@ -222,7 +225,8 @@ chooseFight.onclick = function () {
 
 att.onclick = function () {
     att.disabled = true;
-    e_Hp -= count * stage;
+    e_Hp -= count * stage * effectiveness[type][etype];
+
     if (e_Hp > 0) {
         setTimeout(function () { att.disabled = false; }, shotDuration * 1.2);
     }
