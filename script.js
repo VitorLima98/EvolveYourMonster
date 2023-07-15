@@ -365,7 +365,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(85vw, -55vh)"
+            transform: "translate(80vw, -55vh)"
         }
     ], {
         duration: shotDuration
