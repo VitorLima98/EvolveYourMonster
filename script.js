@@ -247,9 +247,18 @@ damageText = function () {
     damage.innerHTML = "- " + danoFeito;
     damage.style.display = "block";
 
-    offX = 2 - Math.ceil(Math.random() * 2);
-    offY = 2 - Math.ceil(Math.random() * 5);
-
+    offX = 25 - Math.ceil(Math.random() * 20);
+    offY = 25 - Math.ceil(Math.random() * 50);;
+    damage.animate([
+        {
+            transform: 'translate(0%, 0%)'
+        },
+        {
+            transform: 'translate(' + offX + '%,' + offY + '%)'
+        }
+    ], {
+        duration: 300
+    });
 
     setTimeout(function () { damage.style.display = "none"; }, 300);
 
