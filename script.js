@@ -208,16 +208,16 @@ chooseFight.onclick = function () {
     titulo.innerHTML = "BATALHA!"
 
     monster.style.position = 'absolute';
-    monster.style.bottom = '5vh';
+    monster.style.bottom = '15vh';
     monster.style.left = '5vh';
 
     vida.style.position = 'absolute';
-    vida.style.bottom = '0vh';
+    vida.style.bottom = '10vh';
     vida.style.left = '10vh';
 
     enemy.style.position = 'absolute';
-    enemy.style.top = '5vh';
-    enemy.style.right = '5vh';
+    enemy.style.top = '15vh';
+    enemy.style.right = '15vh';
     enemy.style.zIndex = -3;
     document.getElementById('enemyPic').src = "./enemy" + etype + ".png";
     eShot.src = "./att" + etype + ".png";
@@ -300,7 +300,7 @@ enemyAttack = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(-100vw, 80vh)"
+            transform: "translate(-90vw, 65vh)"
         }
     ], {
         duration: shotDuration
@@ -362,7 +362,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(100vw, -80vh)"
+            transform: "translate(85vw, -60vh)"
         }
     ], {
         duration: shotDuration
