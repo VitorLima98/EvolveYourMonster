@@ -247,8 +247,8 @@ damageText = function () {
     damage.innerHTML = "- " + danoFeito;
     damage.style.display = "block";
 
-    offX = 25 - Math.ceil(Math.random() * 20);
-    offY = 25 - Math.ceil(Math.random() * 50);;
+    offX = 2 - Math.ceil(Math.random() * 2);
+    offY = 2 - Math.ceil(Math.random() * 5);;
     damage.animate([
         {
             transform: 'translate(0%, 0%)'
@@ -365,7 +365,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(20vw, -45vh)"
+            transform: "translate(75vw, -45vh)"
         }
     ], {
         duration: shotDuration
