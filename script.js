@@ -248,17 +248,8 @@ damageText = function () {
     damage.style.display = "block";
 
     offX = 2 - Math.ceil(Math.random() * 2);
-    offY = 2 - Math.ceil(Math.random() * 5);;
-    damage.animate([
-        {
-            transform: 'translate(0%, 0%)'
-        },
-        {
-            transform: 'translate(' + offX + '%,' + offY + '%)'
-        }
-    ], {
-        duration: 300
-    });
+    offY = 2 - Math.ceil(Math.random() * 5);
+
 
     setTimeout(function () { damage.style.display = "none"; }, 300);
 
