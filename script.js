@@ -217,7 +217,7 @@ chooseFight.onclick = function () {
 
     enemy.style.position = 'absolute';
     enemy.style.top = '15vh';
-    enemy.style.right = '15vh';
+    enemy.style.right = '5vh';
     enemy.style.zIndex = -3;
     document.getElementById('enemyPic').src = "./enemy" + etype + ".png";
     eShot.src = "./att" + etype + ".png";
@@ -300,7 +300,7 @@ enemyAttack = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(-90vw, 65vh)"
+            transform: "translate(-90vw, 55vh)"
         }
     ], {
         duration: shotDuration
@@ -362,7 +362,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(85vw, -60vh)"
+            transform: "translate(90vw, -55vh)"
         }
     ], {
         duration: shotDuration
