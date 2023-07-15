@@ -13,6 +13,7 @@ var enemy = document.getElementById("enemy");
 var fightScreen = document.getElementById("fightScreen");
 var shot = document.getElementById("shot");
 var eShot = document.getElementById("eShot");
+var damage = document.getElementById("damage");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -25,6 +26,8 @@ var effectiveness = [[1, 1, 1, 1],
 [1, 0.5, 0.5, 2],
 [1, 2, 0.5, 0.5],
 [1, 0.5, 2, 0.5]];
+var danoFeito, danoRecebido;
+
 //inventory
 
 HUD.style.display = "none";
@@ -225,13 +228,36 @@ chooseFight.onclick = function () {
 
 att.onclick = function () {
     att.disabled = true;
-    e_Hp -= count * stage * effectiveness[type][etype];
+    danoFeito = count * stage * effectiveness[type][etype];
+    e_Hp -= danoFeito;
 
     if (e_Hp > 0) {
         setTimeout(function () { att.disabled = false; }, shotDuration * 1.2);
     }
 
     attackAnimation();
+    setTimeout(function () { damageText(); }, shotDuration * 0.8);
+}
+
+damageText = function () {
+    damage.innerHTML = "- " + danoFeito;
+    damage.style.display = "block";
+
+    offX = 25 - Math.ceil(Math.random() * 20);
+    offY = 25 - Math.ceil(Math.random() * 50);;
+    damage.animate([
+        {
+            transform: 'translate(0%, 0%)'
+        },
+        {
+            transform: 'translate(' + offX + '%,' + offY + '%)'
+        }
+    ], {
+        duration: 300
+    });
+
+    setTimeout(function () { damage.style.display = "none"; }, 300);
+
 }
 
 victory = function () {
@@ -255,7 +281,8 @@ enemyAttack = function () {
     ], {
         duration: 100
     });
-    hp -= (1 + Math.floor(Math.random() * 10)) + 10;
+    danoRecebido = (1 + Math.floor(Math.random() * 10)) + 10;
+    hp -= danoRecebido;
 
     eShot.style.position = 'absolute';
     eShot.style.top = enemy.style.top;

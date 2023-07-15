@@ -181,6 +181,14 @@ button {
     z-index: -2;
 }
 
+#damage {
+    position: relative;
+    color: red;
+    z-index: 5;
+    top: -5vh;
+    right: -5vh;
+}
+
 #top-menu {
     top: 0vh;
 }
