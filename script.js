@@ -10,6 +10,7 @@ var chooseFight = document.getElementById("chooseFight");
 var avoid = document.getElementById("avoid");
 var chooseRun = document.getElementById("chooseRun");
 var enemy = document.getElementById("enemy");
+var enemyPic = document.getElementById('enemyPic')
 var fightScreen = document.getElementById("fightScreen");
 var shot = document.getElementById("shot");
 var eShot = document.getElementById("eShot");
@@ -35,8 +36,10 @@ fightScreen.style.display = "none";
 chooseFight.style.display = "none";
 avoid.style.display = "none";
 
-monster.style.height = "25vh";
-monster.style.width = "25vh";
+monster.style.height = "15vh";
+monster.style.width = "15vh";
+enemyPic.style.height = "20vh";
+enemyPic.style.width = "20vh";
 
 
 treinar.onclick = function () {
@@ -209,7 +212,7 @@ chooseFight.onclick = function () {
 
     monster.style.position = 'absolute';
     monster.style.bottom = '15vh';
-    monster.style.left = '5vh';
+    monster.style.left = '5vw';
 
     vida.style.position = 'absolute';
     vida.style.bottom = '10vh';
@@ -217,9 +220,9 @@ chooseFight.onclick = function () {
 
     enemy.style.position = 'absolute';
     enemy.style.top = '15vh';
-    enemy.style.right = '5vh';
+    enemy.style.right = '5vw';
     enemy.style.zIndex = -3;
-    document.getElementById('enemyPic').src = "./enemy" + etype + ".png";
+    enemyPic.src = "./enemy" + etype + ".png";
     eShot.src = "./att" + etype + ".png";
 
     stopfight = setInterval(function () { enemyAttack() }, 1500);
