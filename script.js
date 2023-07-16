@@ -4,7 +4,6 @@ var HUD = document.getElementById('HUD');
 var nomeEspecie = document.getElementById('especie');
 var titulo = document.getElementById("titulo");
 var vida = document.getElementById("vida");
-
 var att = document.getElementById("att");
 var chooseFight = document.getElementById("chooseFight");
 var avoid = document.getElementById("avoid");
@@ -36,11 +35,10 @@ fightScreen.style.display = "none";
 chooseFight.style.display = "none";
 avoid.style.display = "none";
 
-monster.style.height = "15vh";
-monster.style.width = "15vh";
-enemyPic.style.height = "20vh";
-enemyPic.style.width = "20vh";
-
+monster.style.height = monster.style.width = "15vh";
+enemyPic.style.height = enemyPic.style.width = "20vh";
+shot.style.height = eShot.style.height = "10vh";
+shot.style.width = eShot.style.width = "10vh";
 
 treinar.onclick = function () {
     count++;
@@ -113,9 +111,7 @@ start = function () {
     shot.src = "./att" + type + ".png";
 
     eShot.style.display = "none";
-    eShot.src = "./att1.png";
-    eShot.style.width = "100px";
-    eShot.style.height = "100px";
+    enemy.style.zIndex = -3;
     vida.innerHTML = "Vida:" + hp;
 
 }
@@ -179,10 +175,10 @@ evoluir = function () {
     hp = maxHp;
 
     shotDuration *= 0.8;
-    monster.animate([{ transform: "rotateY(360deg)" }], 300);
+    monster.animate([{ transform: "rotateY(720deg)" }], 300);
+    monster.animate([{ transform: "scale(2)" }], 300);
 
     if (stage < 4) {
-        alert("EVOLUTION!");
         monster.src = "./00" + ID + ".png";
     }
     else if (stage === 4) {
@@ -221,7 +217,7 @@ chooseFight.onclick = function () {
     enemy.style.position = 'absolute';
     enemy.style.top = '15vh';
     enemy.style.right = '5vw';
-    enemy.style.zIndex = -3;
+
     enemyPic.src = "./enemy" + etype + ".png";
     eShot.src = "./att" + etype + ".png";
 
@@ -275,7 +271,7 @@ victory = function () {
 
 enemyAttack = function () {
 
-    enemy.animate([
+    enemyPic.animate([
         {
             transform: 'translate(0%, 0%)'
         },
@@ -292,24 +288,21 @@ enemyAttack = function () {
     eShot.style.top = enemy.style.top;
     eShot.style.right = enemy.style.right;
     eShot.style.display = "block";
-    shot.style.width = "100px";
-    shot.style.height = "100px";
 
-    setTimeout(function () { eShot.style.display = "none"; }, shotDuration);
+    setTimeout(function () { eShot.style.display = "none"; }, 1000);
 
-    eShot.style.display = "block"
     eShot.animate([
         {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(-90vw, 55vh)"
+            transform: "translate(-90vw, 60vh)"
         }
     ], {
-        duration: shotDuration
+        duration: 1000
     });
 
-    setTimeout(function () { playerAnimate() }, shotDuration * 0.8);
+    setTimeout(function () { playerHit() }, 800);
 }
 
 chooseRun.onclick = function () {
@@ -346,9 +339,6 @@ tituloNovo = function () {
 
 let shotDuration = 1000;
 attackAnimation = function () {
-    shot.style.display = "block";
-
-
     monster.animate([
         {
             transform: 'translate(0%, 0%)'
@@ -365,7 +355,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(75vw, -45vh)"
+            transform: "translate(85vw, -55vh)"
         }
     ], {
         duration: shotDuration
@@ -374,13 +364,12 @@ attackAnimation = function () {
     shot.style.position = 'absolute';
     shot.style.bottom = monster.style.bottom;
     shot.style.left = monster.style.left;
-    shot.style.width = "100px";
-    shot.style.height = "100px";
+    shot.style.display = "block";
     setTimeout(function () { shot.style.display = "none"; }, shotDuration);
-    setTimeout(function () { enemyAnimate() }, shotDuration * 0.8);
+    setTimeout(function () { enemyHit() }, shotDuration * 0.8);
 }
 
-enemyAnimate = function () {
+enemyHit = function () {
     enemyPic.animate([{ scale: 0.93 }], 300);
     if (e_Hp <= 0) {
         e_Hp = 0;
@@ -390,7 +379,7 @@ enemyAnimate = function () {
     if (e_Hp <= 0) { setTimeout(function () { victory();; }, shotDuration * 0.5); }
 }
 
-playerAnimate = function () {
+playerHit = function () {
     monster.animate([{ scale: 0.93 }], 300);
     vida.innerHTML = "Vida: " + hp;
     if (hp <= 0) {
