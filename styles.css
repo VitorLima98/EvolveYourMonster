@@ -221,23 +221,28 @@ button {
 
 progress {
     border: none;
-    width: 150px;
+    border-radius: 15px;
+    width: 200px;
     height: 20px;
     background: crimson;
 }
 
 progress {
     color: lightblue;
+    border-radius: 15px;
 }
 
 progress::-moz-progress-bar {
     background: lightblue;
+    border-radius: 15px;
 }
 
 progress::-webkit-progress-value {
     background: greenyellow;
+    border-radius: 15px;
 }
 
 progress::-webkit-progress-bar {
     background: crimson;
+    border-radius: 15px;
 }

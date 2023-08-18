@@ -215,6 +215,7 @@ chooseFight.onclick = function () {
     barraVida.style.position = 'absolute';
     barraVida.style.bottom = '10vh';
     barraVida.style.left = '5vw';
+    barraVida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
     monster.style.position = 'absolute';
     monster.style.bottom = '15vh';
