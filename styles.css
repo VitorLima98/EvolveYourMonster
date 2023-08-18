@@ -218,3 +218,26 @@ button {
     align-items: center;
     vertical-align: middle;
 }
+
+progress {
+    border: none;
+    width: 150px;
+    height: 20px;
+    background: crimson;
+}
+
+progress {
+    color: lightblue;
+}
+
+progress::-moz-progress-bar {
+    background: lightblue;
+}
+
+progress::-webkit-progress-value {
+    background: greenyellow;
+}
+
+progress::-webkit-progress-bar {
+    background: crimson;
+}

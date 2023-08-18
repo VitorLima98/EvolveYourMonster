@@ -14,6 +14,8 @@ var fightScreen = document.getElementById("fightScreen");
 var shot = document.getElementById("shot");
 var eShot = document.getElementById("eShot");
 var damage = document.getElementById("damage");
+var barraVida = document.getElementById("health");
+var barraInimigo = document.getElementById("enemyHealth");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -112,7 +114,7 @@ start = function () {
 
     eShot.style.display = "none";
     enemy.style.zIndex = -3;
-    vida.innerHTML = "Vida:" + hp;
+    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
 }
 
@@ -165,6 +167,8 @@ especie = function () {
         nomeEspecie.className = '';
         nomeEspecie.classList.add('rainbow_text_animated')
     }
+
+
 }
 
 evoluir = function () {
@@ -172,7 +176,8 @@ evoluir = function () {
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
     maxHp += 25;
-    hp = maxHp;
+    hp = barraVida.value = barraVida.max = maxHp;
+    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
     shotDuration *= 0.8;
     monster.animate([{ transform: "rotateY(720deg)" }], 300);
@@ -199,12 +204,17 @@ chooseFight.onclick = function () {
     att.disabled = false;
     e_Hp = max_e_Hp + count % 5 - 3;
     hp = maxHp;
-    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+    //document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
 
     nomeEspecie.style.display = "none";
     HUD.style.display = "none";
     fightScreen.style.display = "block";
     titulo.innerHTML = "BATALHA!"
+
+    hpBarCreate();
+    barraVida.style.position = 'absolute';
+    barraVida.style.bottom = '10vh';
+    barraVida.style.left = '5vw';
 
     monster.style.position = 'absolute';
     monster.style.bottom = '15vh';
@@ -237,6 +247,13 @@ att.onclick = function () {
 
     attackAnimation();
     setTimeout(function () { damageText(); }, shotDuration * 0.8);
+}
+
+hpBarCreate = function () {
+    barraVida.value = hp;
+    barraVida.max = maxHp;
+
+    barraInimigo.value = barraInimigo.max = max_e_Hp;
 }
 
 damageText = function () {
@@ -327,7 +344,7 @@ restoreHUD = function () {
     treinar.innerHTML = "XP: " + count;
     vida.style.position = 'initial';
     hp = maxHp;
-    vida.innerHTML = "Vida: " + hp;
+    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
     treinar.style.display = "block";
 }
 
@@ -375,13 +392,15 @@ enemyHit = function () {
         e_Hp = 0;
         clearInterval(stopfight);
     }
-    document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+    //document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+    barraInimigo.value = e_Hp;
     if (e_Hp <= 0) { setTimeout(function () { victory();; }, shotDuration * 0.5); }
 }
 
 playerHit = function () {
     monster.animate([{ scale: 0.93 }], 300);
-    vida.innerHTML = "Vida: " + hp;
+    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
+    barraVida.value = hp;
     if (hp <= 0) {
         alert("Derrota!");
         escapeBattle();

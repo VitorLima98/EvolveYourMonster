@@ -17,6 +17,10 @@
   <!--div id="botaoP" className="botaoPassear"><button id="click">Passear</button></div><br-->
 
   <h4 id="vida"></h4>
+
+
+
+
   <div id="UI">
     <img id="monster" class="egg" src="./egg.png" width="150" height="150">
   </div>
@@ -40,13 +44,16 @@
   <div id="fightScreen">
     <button id="att">Atacar!</button>
     <button id="chooseRun">Fugir!</button>
-
+    <progress id="health" value="100" max="100"></progress>
     <img id="shot">
     <img id="eShot">
+    <div id="hpbar" class="healthBar">
+    </div>
 
     <div id="enemy">
+      <div><progress id="enemyHealth" value="100" max="100"></progress></div>
       <img id="enemyPic" src="" width="200" height="200">
-      <h2 id="vidaE"></h2>
+      <!--h2 id="vidaE"></h2-->
       <h4 id="damage"></h4>
     </div>
 
