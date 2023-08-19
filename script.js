@@ -185,16 +185,22 @@ evoluir = function () {
 
     if (stage < 4) {
         monster.src = "./00" + ID + ".png";
+        monster.style.width = "20vh";
+        monster.style.height = "20vh";
     }
     else if (stage === 4) {
         ID--;
         alert("MEGA EVOLUTION!");
         monster.src = "./00" + ID + "M.png";
+        monster.style.width = "25vh";
+        monster.style.height = "25vh";
     }
     else if (stage === 5) {
         ID -= 2;
         alert("GIGANTAMAX FORM!");
         monster.src = "./00" + ID + "X.png";
+        monster.style.width = "30vh";
+        monster.style.height = "30vh";
     }
     especie();
 }
@@ -373,7 +379,7 @@ attackAnimation = function () {
             transform: "translate(0px, 0px)"
         },
         {
-            transform: "translate(85vw, -55vh)"
+            transform: "translate(75vw, -55vh)"
         }
     ], {
         duration: shotDuration
