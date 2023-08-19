@@ -226,8 +226,8 @@ button {
 progress {
     border: none;
     border-radius: 15px;
-    width: 200px;
-    height: 20px;
+    width: 12vw;
+    height: 2vh;
     background: crimson;
 }
 

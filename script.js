@@ -18,6 +18,9 @@ var barraVida = document.getElementById("health");
 var barraInimigo = document.getElementById("enemyHealth");
 var mato = document.getElementById("mato");
 
+//Evoluir
+var chooseEvolve = document.getElementById("evoluir");
+
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
     water = document.getElementById("water"),
@@ -36,6 +39,7 @@ var danoFeito, danoRecebido;
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 chooseFight.style.display = "none";
+chooseEvolve.style.display = "none";
 avoid.style.display = "none";
 
 monster.style.height = monster.style.width = "15vh";
@@ -76,9 +80,14 @@ avoid.onclick = function () {
 
 checkEvolve = function () {
     if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
-        evoluir();
+        chooseEvolve.style.display = "block";
     }
 
+}
+
+chooseEvolve.onclick = function () {
+    chooseEvolve.style.display = "none";
+    evoluir();
 }
 
 grass.onclick = function () {
