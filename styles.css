@@ -168,9 +168,13 @@ button {
 }
 
 .mato {
+
+    position: fixed;
+    top: 10vh;
+    left: 5vh;
+    z-index: 2;
     height: 100vh;
-    position: relative;
-    z-index: -1;
+    width: 100vw;
 }
 
 #enemyPic {

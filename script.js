@@ -16,6 +16,7 @@ var eShot = document.getElementById("eShot");
 var damage = document.getElementById("damage");
 var barraVida = document.getElementById("health");
 var barraInimigo = document.getElementById("enemyHealth");
+var mato = document.getElementById("mato");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
