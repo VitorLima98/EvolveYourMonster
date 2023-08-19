@@ -250,3 +250,8 @@ progress::-webkit-progress-bar {
     background: crimson;
     border-radius: 15px;
 }
+
+:root {
+    touch-action: pan-x pan-y;
+    height: 100%
+}
