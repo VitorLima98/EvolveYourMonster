@@ -25,7 +25,7 @@ var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
     water = document.getElementById("water"),
     fire = document.getElementById("fire"),
-    elec = document.getElementById("elec");
+    ghost = document.getElementById("ghost");
 var stageUp = false, stage = 1, count = 1;
 //fight vars
 var hp = 100, maxHp = 100, etype = 1, e_Hp = 250, max_e_Hp = 100;
@@ -118,7 +118,7 @@ water.onclick = function () {
     monster.src = "./007.png";
 }
 
-elec.onclick = function () {
+ghost.onclick = function () {
     type = 4;
     start();
     titulo.classList.add('ghost_text_animated')
