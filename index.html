@@ -16,18 +16,20 @@
 </head>
 
 <body>
+  <div id="top-menu" class="menu">
+    <div id="icons">
+      <img src="./grasstype.png" class="typeicon">
+      <img src="./firetype.png" class="typeicon">
+      <img src="./watertype.png" class="typeicon">
+      <img src="./electype.png" class="typeicon">
+    </div>
+    <button id="reset">RESET</button>
+  </div>
 
-  <div id="top-menu" class="menu">TOPO</div>
   <h1 id="titulo">Evolve to fight</h1><br>
 
-
-
-  <h4 id="vida"></h4>
-
-
-
-
   <div id="UI">
+    <h4 id="vida"></h4>
     <img id="monster" class="egg" src="./egg.png" width="150" height="150">
   </div>
   <h2 id="especie"></h2>
@@ -40,12 +42,14 @@
   <!--img id="mato" src="./grass.png"-->
 
   <div id="escolherBicho">
-    <h2> Escolha seu inicial </h2>
-    <span><button id="grass">Saposauro</button></span>
+    <h2> Escolha seu companheiro nesa jornada! </h2>
+    <div id="choices">
+      <span><button id="grass">Saposauro</button></span>
 
-    <span><button id="fire">Lagarto</button></span>
+      <span><button id="fire">Lagarto</button></span>
 
-    <span><button id="water">Tartaruga</button></span><br>
+      <span><button id="water">Tartaruga</button></span><br>
+    </div>
   </div>
 
   <div id="fightScreen">
@@ -60,14 +64,12 @@
     <div id="enemy">
       <div><progress id="enemyHealth" value="100" max="100"></progress></div>
       <img id="enemyPic" src="" width="200" height="200">
-      <!--h2 id="vidaE"></h2-->
       <h4 id="damage"></h4>
     </div>
 
 
   </div>
 
-  <div id="bottom-line" class="menu">FUNDO</div>
 
   <script src="script.js"></script>
 </body>

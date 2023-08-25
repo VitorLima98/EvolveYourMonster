@@ -195,22 +195,38 @@ button {
 
 #top-menu {
     top: 0vh;
-}
-
-#bottom-line {
-    position: fixed;
-    bottom: -5vh;
+    left: 50vh;
 }
 
 .menu {
+    display: flex;
+    align-items: center;
+
+
     position: sticky;
     height: 5vh;
     width: 105vw;
+    left: 10vh;
 
     background: linear-gradient(to top, black, rgb(100, 0, 0), rgb(100, 0, 0), rgb(100, 0, 0), black);
 
-
     z-index: 1;
+}
+
+#icons {
+    position: relative;
+    left: 100vh;
+}
+
+#reset {
+    padding: 2px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+#choices {
+    position: relative;
+    left: 15vh;
 }
 
 #HUD {
@@ -254,4 +270,9 @@ progress::-webkit-progress-bar {
 :root {
     touch-action: pan-x pan-y;
     height: 100%
+}
+
+.typeicon {
+    width: 25px;
+    height: 25px;
 }
