@@ -24,14 +24,16 @@ var chooseEvolve = document.getElementById("evoluir");
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
     water = document.getElementById("water"),
-    fire = document.getElementById("fire");
+    fire = document.getElementById("fire"),
+    elec = document.getElementById("elec");
 var stageUp = false, stage = 1, count = 1;
 //fight vars
 var hp = 100, maxHp = 100, etype = 1, e_Hp = 250, max_e_Hp = 100;
-var effectiveness = [[1, 1, 1, 1],
-[1, 0.5, 0.5, 2],
-[1, 2, 0.5, 0.5],
-[1, 0.5, 2, 0.5]];
+var effectiveness = [[1, 1, 1, 1, 0],
+[1, 0.5, 0.5, 2, 1],
+[1, 2, 0.5, 0.5, 1],
+[1, 0.5, 2, 0.5, 1],
+[0, 1, 1, 1, 2]];
 var danoFeito, danoRecebido;
 
 //inventory
@@ -81,7 +83,10 @@ avoid.onclick = function () {
 }
 
 checkEvolve = function () {
-    if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
+    if (type === 4 && count > stage * 16) {
+        chooseEvolve.style.display = "block";
+    }
+    else if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
         chooseEvolve.style.display = "block";
     }
 
@@ -111,6 +116,13 @@ water.onclick = function () {
     start();
     titulo.classList.add('water_text_animated')
     monster.src = "./007.png";
+}
+
+elec.onclick = function () {
+    type = 4;
+    start();
+    titulo.classList.add('ghost_text_animated')
+    monster.src = "./0092.png";
 }
 
 start = function () {
@@ -180,6 +192,23 @@ especie = function () {
         nomeEspecie.classList.add('rainbow_text_animated')
     }
 
+    //GHOST
+    if (type === 4 && stage === 1)
+        nomeEspecie.innerHTML = "Gastly";
+    else if (type === 4 && stage === 2)
+        nomeEspecie.innerHTML = "Haunter";
+    else if (type === 4 && stage === 3)
+        nomeEspecie.innerHTML = "Gengar";
+    else if (type === 4 && stage === 4) {
+        nomeEspecie.innerHTML = "Mega Gengar";
+        nomeEspecie.classList.add('ghost_text_animated')
+    }
+    else if (type === 4 && stage === 5) {
+        nomeEspecie.innerHTML = "G-MAX Gengar";
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('rainbow_text_animated')
+    }
+
 
 }
 
@@ -187,6 +216,8 @@ evoluir = function () {
     let ID = ++stage;
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
+    else ID += 91;
+
     maxHp += 25;
     hp = barraVida.value = barraVida.max = maxHp;
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;

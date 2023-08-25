@@ -76,6 +76,24 @@ h1 {
     background-size: 200% 100%;
 }
 
+.elec_text_animated {
+    background: repeating-linear-gradient(to left, yellow, black, yellow, black, orangered);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text_animation 9s linear infinite;
+    background-size: 200% 100%;
+}
+
+.ghost_text_animated {
+    background: repeating-linear-gradient(to left, rgb(94, 6, 153), black, rgb(77, 13, 119), black, rgb(69, 0, 105));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text_animation 9s linear infinite;
+    background-size: 200% 100%;
+}
+
 @keyframes text_animation {
 
     0% {
