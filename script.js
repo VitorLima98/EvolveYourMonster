@@ -56,14 +56,16 @@ treinar.onclick = function () {
 }
 
 wildAppears = function () {
+    //Geração de animal selvagem
     etype = Math.ceil(Math.random() * 3);
     let text = 'Algo selvagem apareceu! Parece ser do tipo ';
+
     if (etype === 1) text += 'planta...';
     else if (etype === 2) text += 'fogo...';
     else text += 'água...';
+
     alert(text)
     fightPrompt();
-
 }
 
 fightPrompt = function () {
