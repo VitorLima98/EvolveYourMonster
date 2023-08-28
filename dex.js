@@ -29,6 +29,7 @@ ghost.onclick = function () {
 
 // ATUALIZAR NOME DA ESPECIE
 especie = function () {
+    nomeEspecie.style.display = "block";
     //GRASS
     if (type === 1 && stage === 1)
         nomeEspecie.innerHTML = "Bulbasaur";
@@ -102,7 +103,7 @@ evoluir = function () {
     let ID = ++stage;
     if (type === 2) ID += 3;
     else if (type === 3) ID += 6;
-    else ID += 91;
+    else if (type === 4) ID += 91;
 
     maxHp += 25;
     hp = barraVida.value = barraVida.max = maxHp;

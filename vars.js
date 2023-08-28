@@ -19,7 +19,8 @@ var barraInimigo = document.getElementById("enemyHealth");
 var mato = document.getElementById("mato");
 
 //Evoluir
-var chooseEvolve = document.getElementById("evoluir"), reset = 0;
+var chooseEvolve = document.getElementById("evoluir");
+var PRIME = document.getElementById("reset"), reset = 0;
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -48,3 +49,4 @@ monster.style.height = monster.style.width = "15vh";
 enemyPic.style.height = enemyPic.style.width = "20vh";
 shot.style.height = eShot.style.height = "10vh";
 shot.style.width = eShot.style.width = "10vh";
+

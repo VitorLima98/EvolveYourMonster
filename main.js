@@ -1,7 +1,6 @@
 
-
 treinar.onclick = function () {
-    count++;
+    count += 1 + reset;
     treinar.innerHTML = "XP: " + count;
     this.animate([{ scale: 1.03 }], 300);
     checkEvolve();
@@ -35,10 +34,10 @@ avoid.onclick = function () {
 
 checkEvolve = function () {
     if (type === 4 && count > stage * 16) {
-        chooseEvolve.style.display = "block";
+        chooseEvolve.style.display = "inline";
     }
     else if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
-        chooseEvolve.style.display = "block";
+        chooseEvolve.style.display = "inline";
     }
 
 }
@@ -55,6 +54,7 @@ start = function () {
     monster.classList.add('monster');
     document.getElementById('escolherBicho').style.display = "none";
     HUD.style.display = "block";
+    treinar.innerHTML = "XP: " + count;
 
     shot.style.display = "none";
     shot.src = "./att" + type + ".png";
@@ -64,7 +64,6 @@ start = function () {
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
 }
-
 
 restoreHUD = function () {
     clearInterval(stopfight);
@@ -86,3 +85,23 @@ tituloNovo = function () {
     else titulo.innerHTML = "Evolua e vença!";
 }
 
+PRIME.onclick = function () {
+    alert("Resetando!");
+    reset++;
+
+    console.log(reset);
+    maxHp = 100 + 10 * reset;
+
+    count = 5;
+    stage = 1;
+
+    HUD.style.display = "none";
+    vida.style.display = "none";
+    nomeEspecie.style.display = "none";
+    titulo.className = '';
+    monster.classList.remove('monster');
+    monster.classList.add('egg');
+    document.getElementById('escolherBicho').style.display = "block";
+    monster.src = "./egg.png";
+
+}

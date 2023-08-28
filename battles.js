@@ -1,11 +1,14 @@
 var shotDuration = 1000;
 
 chooseFight.onclick = function () {
+    //grass animation
+
     avoid.style.display = "none";
     att.disabled = false;
     e_Hp = max_e_Hp + count % 5 - 3;
     hp = maxHp;
-    //document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
+
+
 
     nomeEspecie.style.display = "none";
     HUD.style.display = "none";
