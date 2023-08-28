@@ -100,11 +100,7 @@ especie = function () {
 }
 
 evoluir = function () {
-    let ID = ++stage;
-    if (type === 2) ID += 3;
-    else if (type === 3) ID += 6;
-    else if (type === 4) ID += 91;
-
+    stage++;
     maxHp += 25;
     hp = barraVida.value = barraVida.max = maxHp;
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
@@ -114,25 +110,44 @@ evoluir = function () {
     monster.animate([{ transform: "scale(2)" }], 300);
 
     if (stage < 4) {
+        playerImage();
+    }
+    else if (stage === 4) {
+        ID--;
+        alert("MEGA EVOLUTION!");
+        playerImage();
+    }
+    else if (stage === 5) {
+        ID -= 2;
+        alert("GIGANTAMAX FORM!");
+        playerImage();
+    }
+    especie();
+}
+
+playerImage = function () {
+    ID = stage;
+    if (type === 2) ID += 3;
+    else if (type === 3) ID += 6;
+    else if (type === 4) ID += 91;
+
+    if (stage < 4) {
         monster.src = "./00" + ID + ".png";
         monster.style.width = "20vh";
         monster.style.height = "20vh";
     }
     else if (stage === 4) {
         ID--;
-        alert("MEGA EVOLUTION!");
         monster.src = "./00" + ID + "M.png";
         monster.style.width = "25vh";
         monster.style.height = "25vh";
     }
     else if (stage === 5) {
         ID -= 2;
-        alert("GIGANTAMAX FORM!");
         monster.src = "./00" + ID + "X.png";
         monster.style.width = "30vh";
         monster.style.height = "30vh";
     }
-    especie();
 }
 
 tituloNovo = function () {

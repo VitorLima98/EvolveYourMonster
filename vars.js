@@ -18,9 +18,13 @@ var barraVida = document.getElementById("health");
 var barraInimigo = document.getElementById("enemyHealth");
 var mato = document.getElementById("mato");
 
-//Evoluir
+
 var chooseEvolve = document.getElementById("evoluir");
+
 var PRIME = document.getElementById("reset"), reset = 0;
+var saveBtn = document.getElementById("save");
+var loadBtn = document.getElementById("load");
+var resetBtn = document.getElementById("erase");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),
@@ -39,14 +43,62 @@ var danoFeito, danoRecebido;
 
 //inventory
 
+
+//save system
+var saved = false;
+
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 chooseFight.style.display = "none";
 chooseEvolve.style.display = "none";
 avoid.style.display = "none";
 
+shot.style.display = "none";
+eShot.style.display = "none";
+
 monster.style.height = monster.style.width = "15vh";
 enemyPic.style.height = enemyPic.style.width = "20vh";
 shot.style.height = eShot.style.height = "10vh";
 shot.style.width = eShot.style.width = "10vh";
+
+keepData = function () {
+    window.name = "saved"
+    sessionStorage.setItem("level", count);
+    sessionStorage.setItem("primes", reset);
+    sessionStorage.setItem("typing", type);
+    sessionStorage.setItem("phase", stage);
+    sessionStorage.setItem("health", maxHp);
+    alert("Salvo com sucesso!");
+}
+
+retrieveData = function () {
+    if (window.name === "saved") {
+        count = parseInt(sessionStorage.getItem("level"));
+        reset = parseInt(sessionStorage.getItem("primes"));
+        type = parseInt(sessionStorage.getItem("typing"));
+        stage = parseInt(sessionStorage.getItem("phase"));
+        hp = maxHp = parseInt(sessionStorage.getItem("health"));
+        alert("Dados recuperados!");
+    }
+    else {
+        alert("Nenhum dado para recuperar!")
+    }
+
+    //reiniciar a HUD
+    start();
+    especie();
+    playerImage();
+    chooseEvolve.style.display = "none";
+}
+
+resetData = function () {
+    sessionStorage.setItem("level", 0);
+    sessionStorage.setItem("primes", 0);
+    sessionStorage.setItem("typing", 0);
+    sessionStorage.setItem("phase", 0);
+    sessionStorage.setItem("health", 0);
+    window.name = "unsaved"
+    alert("Dados apagados!")
+}
+
 

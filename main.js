@@ -1,4 +1,8 @@
 
+if (window.name === "saved") {
+    console.log("Há dados para restaurar.");
+}
+
 treinar.onclick = function () {
     count += 1 + reset;
     treinar.innerHTML = "XP: " + count;
@@ -22,6 +26,7 @@ wildAppears = function () {
 
 fightPrompt = function () {
     treinar.style.display = "none";
+    chooseEvolve.style.display = "none";
     chooseFight.style.display = "inline";
     avoid.style.display = "inline";
 }
@@ -38,6 +43,9 @@ checkEvolve = function () {
     }
     else if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
         chooseEvolve.style.display = "inline";
+    }
+    else {
+        chooseEvolve.style.display = "none";
     }
 
 }
@@ -56,11 +64,8 @@ start = function () {
     HUD.style.display = "block";
     treinar.innerHTML = "XP: " + count;
 
-    shot.style.display = "none";
     shot.src = "./att" + type + ".png";
 
-    eShot.style.display = "none";
-    enemy.style.zIndex = -3;
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
 }
@@ -104,4 +109,19 @@ PRIME.onclick = function () {
     document.getElementById('escolherBicho').style.display = "block";
     monster.src = "./egg.png";
 
+}
+
+saveBtn.onclick = function () {
+    alert("salvando")
+    keepData();
+}
+
+loadBtn.onclick = function () {
+    alert("carregando")
+    retrieveData();
+}
+
+resetBtn.onclick = function () {
+    alert("resetando")
+    resetData();
 }
