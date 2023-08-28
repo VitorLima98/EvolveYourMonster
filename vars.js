@@ -79,16 +79,16 @@ retrieveData = function () {
         stage = parseInt(sessionStorage.getItem("phase"));
         hp = maxHp = parseInt(sessionStorage.getItem("health"));
         alert("Dados recuperados!");
+
+        //reiniciar a HUD
+        start();
+        especie();
+        playerImage();
+        chooseEvolve.style.display = "none";
     }
     else {
         alert("Nenhum dado para recuperar!")
     }
-
-    //reiniciar a HUD
-    start();
-    especie();
-    playerImage();
-    chooseEvolve.style.display = "none";
 }
 
 resetData = function () {
