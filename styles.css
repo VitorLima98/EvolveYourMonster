@@ -126,7 +126,7 @@ h1 {
 button {
     position: static;
     cursor: pointer;
-    padding: 15px;
+    padding: 6px;
     margin: 10px;
     border-radius: 7px 9px 7px;
 }
@@ -262,6 +262,11 @@ button {
     vertical-align: middle;
 }
 
+#inv{
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+}
 progress {
     border: none;
     border-radius: 15px;

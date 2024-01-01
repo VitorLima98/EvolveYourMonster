@@ -41,9 +41,6 @@ var effectiveness = [[1, 1, 1, 1, 0],
 [0, 1, 1, 1, 2]];
 var danoFeito, danoRecebido;
 
-//inventory
-
-
 //save system
 var saved = false;
 

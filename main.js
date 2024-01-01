@@ -57,6 +57,7 @@ chooseEvolve.onclick = function () {
 
 start = function () {
     especie();
+    playerImage();
     titulo.className = '';
     monster.classList.remove('egg');
     monster.classList.add('monster');
@@ -125,3 +126,5 @@ resetBtn.onclick = function () {
     alert("resetando")
     resetData();
 }
+
+//<div id="team"><button>Seu time</button></div>

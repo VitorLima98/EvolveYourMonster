@@ -23,8 +23,10 @@ water.onclick = function () {
 ghost.onclick = function () {
     type = 4;
     start();
-    titulo.classList.add('ghost_text_animated')
     monster.src = "./0092.png";
+    playerImage();
+    titulo.classList.add('ghost_text_animated')
+    
 }
 
 // ATUALIZAR NOME DA ESPECIE
