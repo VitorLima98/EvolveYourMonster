@@ -38,7 +38,7 @@ avoid.onclick = function () {
 }
 
 checkEvolve = function () {
-    if (type === 4 && count > stage * 16) {
+    if (type === 4 && count > stage * 16 && stage < 5) {
         chooseEvolve.style.display = "inline";
     }
     else if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {

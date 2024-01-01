@@ -18,6 +18,12 @@ var barraVida = document.getElementById("health");
 var barraInimigo = document.getElementById("enemyHealth");
 var mato = document.getElementById("mato");
 
+//inventory
+var rarecandy = document.getElementById("rc");
+var pokeball = document.getElementById("pb");
+var potion = document.getElementById("pt");
+
+
 
 var chooseEvolve = document.getElementById("evoluir");
 
