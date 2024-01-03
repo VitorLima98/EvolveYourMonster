@@ -338,7 +338,7 @@ progress::-webkit-progress-bar {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content button:hover {background-color: #ddd;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
@@ -346,8 +346,11 @@ progress::-webkit-progress-bar {
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-#itembutton{
-    padding: 3px;
-    margin: 3px;
-    border-radius: 3px;
+.itembutton{
+    position: relative;
+    cursor: pointer;
+    padding: 1px;
+    margin: 1px;
+    width: 12vh;
+    border-radius: 5px;
   }

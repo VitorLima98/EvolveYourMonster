@@ -58,6 +58,7 @@ chooseEvolve.onclick = function () {
 start = function () {
     especie();
     playerImage();
+    checkinv();
     titulo.className = '';
     monster.classList.remove('egg');
     monster.classList.add('monster');
@@ -73,6 +74,7 @@ start = function () {
 
 restoreHUD = function () {
     clearInterval(stopfight);
+    checkinv();
     nomeEspecie.style.display = "block";
     HUD.style.display = "flex";
     tituloNovo();
