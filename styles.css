@@ -214,12 +214,17 @@ button {
 #top-menu {
     display: flex;
     top: 0vh;
-    left: 10vw;
+    left: 5 vw;
+}
+
+#reset{
+    position: relative;
+    left: 5vw;
 }
 
 #savemenu {
     position: relative;
-    left: 25vw;
+    left: 50vw;
 }
 
 .menu {
@@ -239,7 +244,7 @@ button {
 
 #icons {
     position: relative;
-    left: 50vh;
+    left: 45vw;
 }
 
 .menubutton {
@@ -268,6 +273,8 @@ button {
     top: 5vh;
     left: 5vw;
 }
+
+/*barra de vida*/
 progress {
     border: none;
     border-radius: 15px;
@@ -354,4 +361,10 @@ progress::-webkit-progress-bar {
     margin: 1px;
     width: 12vh;
     border-radius: 5px;
+  }
+
+  #fightscreen{
+    position: absolute;
+    bottom: 10vh;
+    right: 10vw;
   }
