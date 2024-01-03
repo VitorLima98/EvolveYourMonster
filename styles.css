@@ -213,12 +213,12 @@ button {
 
 #top-menu {
     top: 0vh;
-    left: 50vh;
+    left: 50vw;
 }
 
 #savemenu {
     position: relative;
-    left: 70vw;
+    left: 25vw;
 }
 
 .menu {
