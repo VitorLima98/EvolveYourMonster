@@ -90,7 +90,7 @@ victory = function () {
     checkEvolve();
     max_e_Hp += 110;
 
-    if (Math.ceil(Math.random() * 20) ==5) {
+    if (Math.ceil(Math.random() * 5) === 2) {
         alert("Ganhou 1x Potion!");
         inv[2]+=1;
         checkinv();
