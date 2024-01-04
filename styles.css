@@ -1,6 +1,6 @@
 body {
     height: 95vh;
-    width: 90vw;
+    width: 100vw;
 
     display: flex;
     flex-direction: column;
@@ -214,7 +214,7 @@ button {
 #top-menu {
     display: flex;
     top: 0vh;
-    left: 5 vw;
+    left: 0vw;
 }
 
 #reset{
@@ -234,7 +234,7 @@ button {
 
     position: sticky;
     height: 5vh;
-    width: 105vw;
+    width: 100vw;
     left: 10vh;
 
     background: linear-gradient(to top, black, rgb(100, 0, 0), rgb(100, 0, 0), rgb(100, 0, 0), black);
@@ -245,6 +245,11 @@ button {
 #icons {
     position: relative;
     left: 45vw;
+}
+
+.typeicon {
+    width: 25px;
+    height: 25px;
 }
 
 .menubutton {
@@ -308,16 +313,15 @@ progress::-webkit-progress-bar {
     height: 100%
 }
 
-.typeicon {
-    width: 25px;
-    height: 25px;
-}
 
 /* INVENTARIO */
 
 
   /* Dropdown Button */
 .dropbtn {
+    position: static;
+    top: 90vh;
+    left: 90vw;
     background-color: #04AA6D;
     color: white;
     font-size: 16px;
@@ -334,7 +338,7 @@ progress::-webkit-progress-bar {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #f1f1f11e;
     z-index: 1;
   }
   
