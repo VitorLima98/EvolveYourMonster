@@ -135,8 +135,8 @@ playerImage = function () {
 
     if (stage < 4) {
         monster.src = "./00" + ID + ".png";
-        monster.style.width = "20vh";
-        monster.style.height = "20vh";
+        monster.style.width = "15vh";
+        monster.style.height = "15vh";
     }
     else if (stage === 4) {
         ID--;
