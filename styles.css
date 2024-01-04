@@ -103,6 +103,7 @@ h1 {
 }
 
 #seletor {
+    position: static;
     padding: 5px;
     display: flex;
     flex-direction: line;
@@ -260,7 +261,7 @@ button {
 
 #choices {
     position: relative;
-    left: 15vh;
+    left: 15vw;
 }
 
 #HUD {
