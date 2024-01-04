@@ -275,8 +275,8 @@ button {
 
 #inv{
     position: absolute;
-    top: 5vh;
-    left: 5vw;
+    bottom: 20vh;
+    right: 5vw;
 }
 
 /*barra de vida*/
