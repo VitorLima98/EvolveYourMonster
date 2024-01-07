@@ -10,7 +10,7 @@ treinar.onclick = function () {
     treinar.disabled=true;
     setTimeout(function () { treinar.disabled = false; }, 800);
     checkEvolve();
-    if ((Math.ceil(Math.random() * 10)) === 1) wildAppears();
+    if ((Math.ceil(Math.random() * 5)) === 1) wildAppears();
 }
 
 wildAppears = function () {
