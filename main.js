@@ -7,6 +7,8 @@ treinar.onclick = function () {
     count += 1 + reset;
     treinar.innerHTML = "XP: " + count;
     this.animate([{ scale: 1.03 }], 300);
+    treinar.disabled=true;
+    setTimeout(function () { treinar.disabled = false; }, 800);
     checkEvolve();
     if ((Math.ceil(Math.random() * 10)) === 1) wildAppears();
 }

@@ -11,14 +11,14 @@ function myKeyPress(e){
     
     //Treinar
     if(String.fromCharCode(keynum) == 'a')
-     if (treinar.style.display != "none") treinar.onclick();
+     if (treinar.style.display != "none" && treinar.disabled==false) treinar.onclick();
      else if (att.style.display != "none" && !att.disabled) att.onclick();
     //Lutar
     if(String.fromCharCode(keynum) == 'q')
       if (chooseFight.style.display === "inline") chooseFight.onclick();
     //Escapar
     if(String.fromCharCode(keynum) == 's')
-      if (chooseRun.style.display === "inline") chooseRun.onclick();
+      if (avoid.style.display === "inline") avoid.onclick();
     //Evoluir
     if(String.fromCharCode(keynum) == 'x')
       if (chooseEvolve.style.display === "inline") chooseEvolve.onclick();
