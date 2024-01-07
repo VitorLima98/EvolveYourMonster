@@ -15,7 +15,7 @@
   </style>
 </head>
 
-<body onkeypress="return myKeyPress(event)">
+<body onkeypress="return myKeyPress(event)" id="PAGE">
   <div id="top-menu" class="menu">
     <button id="reset" class="menubutton">Prestige</button>
     <div id="icons">
@@ -32,13 +32,15 @@
     </div>
   </div>
 
-  <h1 id="titulo">Evolve to fight</h1><br>
+  <h1 id="titulo">Power Battles</h1><br>
 
   <div id="UI">
+    <span id="stats">
     <h4 id="vida"></h4>
+    <h4 id="especie"></h4> <h4 id="level"></h4></span>
     <img id="monster" class="egg" src="./egg.png" width="150" height="150">
   </div>
-  <h2 id="especie"></h2>
+  
   
   <div id="HUD">
     <button id="treinar">Treinar!</button>
@@ -59,11 +61,11 @@
     <div id="choices">
       <span><h2> Escolha seu companheiro nesa jornada! </h2></span>
       <span>
-        <button id="grass">Saposauro</button>
+        <button id="grass">Grama</button>
 
-        <button id="fire">Lagarto</button>
+        <button id="fire">Fogo</button>
   
-        <button id="water">Tartaruga</button>
+        <button id="water">Água</button>
       </span>
       
     

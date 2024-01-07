@@ -1,3 +1,4 @@
+var PAGE = document.getElementById('PAGE');
 var treinar = document.getElementById("treinar");
 var monster = document.getElementById('monster');
 var HUD = document.getElementById('HUD');
@@ -53,6 +54,7 @@ var saved = false;
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 chooseFight.style.display = "none";
+att.style.display = "none";
 chooseEvolve.style.display = "none";
 avoid.style.display = "none";
 treinar.style.display = "none";

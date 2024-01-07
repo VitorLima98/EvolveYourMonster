@@ -8,15 +8,15 @@ function myKeyPress(e){
     } else if(e.which){ // Netscape/Firefox/Opera                 
       keynum = e.which;
     }
-  
-    if(String.fromCharCode(keynum)== 'a'){
+    
     //Treinar
-      if (treinar.style.display != "none") treinar.onclick();
+    if(String.fromCharCode(keynum) == 'a')
+     if (treinar.style.display != "none") treinar.onclick();
+     else if (att.style.display != "none" && !att.disabled) att.onclick();
     //Lutar
-      //if (chooseFight.style.display != "none") chooseFight.onclick();
-    //Atacar
-
-    }
+    if(String.fromCharCode(keynum) == 'q')
+      if (chooseFight.style.display === "inline") chooseFight.onclick();
+    
   }
 
   //  <input type="text" onkeypress="return myKeyPress(event)" />

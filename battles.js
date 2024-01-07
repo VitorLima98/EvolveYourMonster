@@ -2,17 +2,18 @@ var shotDuration = 1000;
 
 chooseFight.onclick = function () {
     //grass animation
-
+    
+    chooseFight.style.display = "none";
     avoid.style.display = "none";
     att.disabled = false;
     e_Hp = max_e_Hp + count % 5 - 3;
     hp = maxHp;
 
 
-
     nomeEspecie.style.display = "none";
     HUD.style.display = "none";
     fightScreen.style.display = "block";
+    att.style.display = "inline";
     titulo.innerHTML = "BATALHA!"
 
     hpBarCreate();
@@ -84,6 +85,7 @@ damageText = function () {
 
 victory = function () {
     fightScreen.style.display = "none";
+    att.style.display = "none";
     alert("Vitoria! Recompensa: 10 XP");
     count += 10;
     restoreHUD();
@@ -106,6 +108,8 @@ victory = function () {
         inv[2]+=1;
         checkinv();
     }
+    
+    chooseFight.style.display = "none";
 }
 
 enemyAttack = function () {
@@ -146,11 +150,14 @@ enemyAttack = function () {
 
 chooseRun.onclick = function () {
     escapeBattle();
+    chooseFight.style.display = "none";
 }
 
 escapeBattle = function () {
     alert("Fugiu em segurança!");
     fightScreen.style.display = "none";
+    chooseFight.style.display = "none";
+    att.style.display = "none";
     restoreHUD();
     max_e_Hp += 15;
     clearInterval(stopfight);
@@ -196,6 +203,7 @@ enemyHit = function () {
     }
     //document.getElementById("vidaE").innerHTML = "HP: " + e_Hp;
     barraInimigo.value = e_Hp;
+    //if(e_Hp <= (max_e_Hp/2)) barraInimigo.getAttribute.
     if (e_Hp <= 0) { setTimeout(function () { victory();; }, shotDuration * 0.5); }
 }
 

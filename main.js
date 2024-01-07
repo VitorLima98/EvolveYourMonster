@@ -74,6 +74,7 @@ start = function () {
 }
 
 restoreHUD = function () {
+    PAGE.style.backgroundImage = "url(./bg"+Math.floor(Math.random() * 3)+".gif)";
     clearInterval(stopfight);
     checkinv();
     nomeEspecie.style.display = "block";
