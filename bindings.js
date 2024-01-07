@@ -16,6 +16,12 @@ function myKeyPress(e){
     //Lutar
     if(String.fromCharCode(keynum) == 'q')
       if (chooseFight.style.display === "inline") chooseFight.onclick();
+    //Escapar
+    if(String.fromCharCode(keynum) == 's')
+      if (chooseRun.style.display === "inline") chooseRun.onclick();
+    //Evoluir
+    if(String.fromCharCode(keynum) == 'x')
+      if (chooseEvolve.style.display === "inline") chooseEvolve.onclick();
     
   }
 
