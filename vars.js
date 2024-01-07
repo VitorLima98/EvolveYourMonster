@@ -55,6 +55,7 @@ fightScreen.style.display = "none";
 chooseFight.style.display = "none";
 chooseEvolve.style.display = "none";
 avoid.style.display = "none";
+treinar.style.display = "none";
 
 shot.style.display = "none";
 eShot.style.display = "none";

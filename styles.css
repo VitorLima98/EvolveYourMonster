@@ -103,7 +103,7 @@ h1 {
 }
 
 #seletor {
-    position: relative;
+    position: absolute;
     top: 50vh;
     left: 50vw;
     padding: 5px;
@@ -139,7 +139,7 @@ button {
 }
 
 .monster {
-    animation: pulse 3s ease-in-out infinite;
+     animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes wiggle {
@@ -227,13 +227,12 @@ button {
 
 #savemenu {
     position: absolute;
-    right: 5vw;
+    right: 10vw;
 }
 
 .menu {
     display: flex;
     align-items: center;
-
 
     position: sticky;
     height: 5vh;
@@ -262,7 +261,12 @@ button {
 }
 
 #choices {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    vertical-align: middle;
+    position: static;
     left: 35vw;
 
 }

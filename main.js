@@ -65,6 +65,7 @@ start = function () {
     document.getElementById('escolherBicho').style.display = "none";
     HUD.style.display = "block";
     treinar.innerHTML = "XP: " + count;
+    treinar.style.display = "block"; 
 
     shot.src = "./att" + type + ".png";
 

@@ -15,7 +15,7 @@
   </style>
 </head>
 
-<body>
+<body onkeypress="return myKeyPress(event)">
   <div id="top-menu" class="menu">
     <button id="reset" class="menubutton">Prestige</button>
     <div id="icons">
@@ -39,12 +39,7 @@
     <img id="monster" class="egg" src="./egg.png" width="150" height="150">
   </div>
   <h2 id="especie"></h2>
-  <div id="inv" class="dropdown"><button class="itembutton">Inventário</button>
-    <div class="dropdown-content">
-      <button class="itembutton" id="rc">Rare Candy</button>
-      <button class="itembutton" id="pb">Poké Ball</button>
-      <button class="itembutton" id="pt">Potion</button>
-    </div></div>
+  
   <div id="HUD">
     <button id="treinar">Treinar!</button>
     <button id="evoluir">Evoluir!</button>
@@ -53,16 +48,26 @@
     
   </div>
 
-  
+  <div id="inv" class="dropdown"><button class="itembutton">Inventário</button>
+    <div class="dropdown-content">
+      <button class="itembutton" id="rc">Rare Candy</button>
+      <button class="itembutton" id="pb">Poké Ball</button>
+      <button class="itembutton" id="pt">Potion</button>
+    </div></div>
 
   <div id="escolherBicho">
-    <h2> Escolha seu companheiro nesa jornada! </h2>
     <div id="choices">
-      <span><button id="grass">Saposauro</button></span>
+      <span><h2> Escolha seu companheiro nesa jornada! </h2></span>
+      <span>
+        <button id="grass">Saposauro</button>
 
-      <span><button id="fire">Lagarto</button></span>
-
-      <span><button id="water">Tartaruga</button></span><br>
+        <button id="fire">Lagarto</button>
+  
+        <button id="water">Tartaruga</button>
+      </span>
+      
+    
+     
     </div>
   </div>
 

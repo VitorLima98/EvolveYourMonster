@@ -135,20 +135,20 @@ playerImage = function () {
 
     if (stage < 4) {
         monster.src = "./00" + ID + ".png";
-        monster.style.width = "15vh";
-        monster.style.height = "15vh";
+        monster.style.width = "150px";
+        monster.style.height = "150px";
     }
     else if (stage === 4) {
         ID--;
         monster.src = "./00" + ID + "M.png";
-        monster.style.width = "25vh";
-        monster.style.height = "25vh";
+        monster.style.width = "200px";
+        monster.style.height = "200px";
     }
     else if (stage === 5) {
         ID -= 2;
         monster.src = "./00" + ID + "X.png";
-        monster.style.width = "30vh";
-        monster.style.height = "30vh";
+        monster.style.width = "225px";
+        monster.style.height = "225px";
     }
 }
 

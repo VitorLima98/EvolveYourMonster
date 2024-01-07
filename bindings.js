@@ -1,3 +1,5 @@
+//apenas no input
+
 function myKeyPress(e){
     var keynum;
   
@@ -7,5 +9,14 @@ function myKeyPress(e){
       keynum = e.which;
     }
   
-    alert(String.fromCharCode(keynum));
+    if(String.fromCharCode(keynum)== 'a'){
+    //Treinar
+      if (treinar.style.display != "none") treinar.onclick();
+    //Lutar
+      //if (chooseFight.style.display != "none") chooseFight.onclick();
+    //Atacar
+
+    }
   }
+
+  //  <input type="text" onkeypress="return myKeyPress(event)" />
