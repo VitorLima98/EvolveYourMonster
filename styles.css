@@ -403,5 +403,9 @@ progress::-webkit-progress-bar {
 #stats{
     
     -webkit-text-stroke: 0.5px #fff;
+}
 
+#att, #chooseRun{
+    position: relative;
+    top: 25vh;
 }
