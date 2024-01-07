@@ -408,7 +408,7 @@ progress::-webkit-progress-bar {
 #chooseRun{
     position: absolute;
     bottom: 5vh;
-    right: 10vw;
+    right: 15vw;
 }
 
 #att{
