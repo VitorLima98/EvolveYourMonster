@@ -407,12 +407,12 @@ progress::-webkit-progress-bar {
 
 #chooseRun{
     position: absolute;
-    bottom: 10vh;
-    right: 25vw;
+    bottom: 5vh;
+    right: 10vw;
 }
 
 #att{
     position: absolute;
-    bottom: 10vh;
-    right: 30vw;
+    bottom: 5vh;
+    right: 20vw;
 }
