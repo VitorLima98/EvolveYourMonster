@@ -405,7 +405,14 @@ progress::-webkit-progress-bar {
     -webkit-text-stroke: 0.5px #fff;
 }
 
-#att, #chooseRun{
-    position: relative;
-    top: 25vh;
+#chooseRun{
+    position: absolute;
+    bottom: 10vh;
+    right: 25vw;
+}
+
+#att{
+    position: absolute;
+    bottom: 10vh;
+    right: 30vw;
 }

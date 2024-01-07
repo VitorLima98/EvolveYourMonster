@@ -14,7 +14,7 @@ chooseFight.onclick = function () {
     HUD.style.display = "none";
     fightScreen.style.display = "block";
     att.style.display = "inline";
-    titulo.innerHTML = "BATALHA!"
+    titulo.innerHTML = ""
 
     hpBarCreate();
     barraVida.style.position = 'absolute';
