@@ -22,6 +22,11 @@ function myKeyPress(e){
     //Evoluir
     if(String.fromCharCode(keynum) == 'x' || String.fromCharCode(keynum) == 'X')
       if (chooseEvolve.style.display === "inline") chooseEvolve.onclick();
+
+    if(String.fromCharCode(keynum) == 'h' || String.fromCharCode(keynum) == 'H'){
+    alert("Use o mouse ou teclado para jogar!\nA = Treinar/Atacar\nQ = Entrar em luta\nS = Fugir de uma luta\nX = Evoluir seu monstro");
+  }
+
     
   }
 
