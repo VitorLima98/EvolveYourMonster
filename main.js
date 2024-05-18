@@ -99,12 +99,12 @@ tituloNovo = function () {
 
 PRIME.onclick = function () {
     alert("Resetando!");
-    reset++;
+    reset+=0.5;
 
     console.log(reset);
-    maxHp = 100 + 10 * reset;
+    maxHp = 100 + 3 * reset;
 
-    count = 5;
+    count = 1;
     stage = 1;
 
     HUD.style.display = "none";
