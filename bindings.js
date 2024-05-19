@@ -24,7 +24,7 @@ function myKeyPress(e){
       if (chooseEvolve.style.display === "inline") chooseEvolve.onclick();
 
     if(String.fromCharCode(keynum) == 'h' || String.fromCharCode(keynum) == 'H'){
-    alert("Use o mouse ou teclado para jogar!\nA = Treinar/Atacar\nQ = Entrar em luta\nS = Fugir de uma luta\nX = Evoluir seu monstro");
+    alert("Use o mouse ou teclado para jogar!\nA = Treinar/Atacar\nQ = Entrar em luta\nS = Fugir de uma luta\nX = Evoluir seu monstro\nH = Mostrar ajuda");
   }
 
     
@@ -34,4 +34,5 @@ function myKeyPress(e){
   //Q = Entrar em luta
   //S = Fugir de uma luta
   //X = Evoluir seu monstro
+  //H = Mostrar ajuda
   //  <input type="text" onkeypress="return myKeyPress(event)" />

@@ -1,3 +1,5 @@
+//alert("Use o mouse ou teclado para jogar!\nA = Treinar/Atacar\nQ = Entrar em luta\nS = Fugir de uma luta\nX = Evoluir seu monstro\nH = Mostrar ajuda");
+
 
 if (window.name === "saved") {
     console.log("Há dados para restaurar.");
