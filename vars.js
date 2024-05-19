@@ -24,14 +24,13 @@ var rarecandy = document.getElementById("rc");
 var pokeball = document.getElementById("pb");
 var potion = document.getElementById("pt");
 
-
-
 var chooseEvolve = document.getElementById("evoluir");
 
 var PRIME = document.getElementById("reset"), reset = 0;
 var saveBtn = document.getElementById("save");
 var loadBtn = document.getElementById("load");
 var resetBtn = document.getElementById("erase");
+var helpBtn = document.getElementById("help");
 
 var type = 0; //0-n 1-grass 2-fire 3-water
 var grass = document.getElementById("grass"),

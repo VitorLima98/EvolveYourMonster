@@ -30,6 +30,10 @@ function myKeyPress(e){
     
   }
 
+  helpBtn.onclick = function (){
+    alert("Use o mouse ou teclado para jogar!\nA = Treinar/Atacar\nQ = Entrar em luta\nS = Fugir de uma luta\nX = Evoluir seu monstro\nH = Mostrar ajuda");
+  }
+
   //A = Treinar/Atacar
   //Q = Entrar em luta
   //S = Fugir de uma luta
