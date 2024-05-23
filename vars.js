@@ -66,23 +66,25 @@ enemyPic.style.height = enemyPic.style.width = "20vh";
 shot.style.height = eShot.style.height = "10vh";
 shot.style.width = eShot.style.width = "10vh";
 
+//Armazenar dados
 keepData = function () {
     window.name = "saved"
-    sessionStorage.setItem("level", count);
-    sessionStorage.setItem("primes", reset);
-    sessionStorage.setItem("typing", type);
-    sessionStorage.setItem("phase", stage);
-    sessionStorage.setItem("health", maxHp);
+    localStorage.setItem("level", count);
+    localStorage.setItem("primes", reset);
+    localStorage.setItem("typing", type);
+    localStorage.setItem("phase", stage);
+    localStorage.setItem("health", maxHp);
     alert("Salvo com sucesso!");
 }
 
+//Recuperar dados
 retrieveData = function () {
     if (window.name === "saved") {
-        count = parseInt(sessionStorage.getItem("level"));
-        reset = parseInt(sessionStorage.getItem("primes"));
-        type = parseInt(sessionStorage.getItem("typing"));
-        stage = parseInt(sessionStorage.getItem("phase"));
-        hp = maxHp = parseInt(sessionStorage.getItem("health"));
+        count = parseInt(localStorage.getItem("level"));
+        reset = parseInt(localStorage.getItem("primes"));
+        type = parseInt(localStorage.getItem("typing"));
+        stage = parseInt(localStorage.getItem("phase"));
+        hp = maxHp = parseInt(localStorage.getItem("health"));
         alert("Dados recuperados!");
 
         //reiniciar a HUD
@@ -97,11 +99,11 @@ retrieveData = function () {
 }
 
 resetData = function () {
-    sessionStorage.setItem("level", 0);
-    sessionStorage.setItem("primes", 0);
-    sessionStorage.setItem("typing", 0);
-    sessionStorage.setItem("phase", 0);
-    sessionStorage.setItem("health", 0);
+    localStorage.setItem("level", 0);
+    localStorage.setItem("primes", 0);
+    localStorage.setItem("typing", 0);
+    localStorage.setItem("phase", 0);
+    localStorage.setItem("health", 0);
     window.name = "unsaved"
     alert("Dados apagados!")
 }
