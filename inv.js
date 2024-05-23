@@ -1,6 +1,6 @@
-//item 01: rare candy
-//item 02: pokeball
-//item 03: potion
+//item 0: rare candy
+//item 1: pokeball
+//item 2: potion
 
 let inv = [0, 0, 1, 0]
 

@@ -93,16 +93,19 @@ victory = function () {
     max_e_Hp += 110;
 
         // Loot drop
+    //1 in 20
     if (Math.ceil(Math.random() * 20) === 2) {
         alert("Ganhou 1x Rare Candy!");
         inv[0]+=1;
         checkinv();
     }
+    //1 in 100
     if (Math.ceil(Math.random() * 100) === 2) {
         alert("Ganhou 1x Poké Ball!");
         inv[1]+=1;
         checkinv();
     }
+    //1 in 5
     if (Math.ceil(Math.random() * 5) === 2) {
         alert("Ganhou 1x Potion!");
         inv[2]+=1;

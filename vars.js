@@ -74,6 +74,9 @@ keepData = function () {
     localStorage.setItem("typing", type);
     localStorage.setItem("phase", stage);
     localStorage.setItem("health", maxHp);
+    localStorage.setItem("rare", inv[0]);
+    localStorage.setItem("poke", inv[1]);
+    localStorage.setItem("potion", inv[2]);
     alert("Salvo com sucesso!");
 }
 
@@ -85,6 +88,9 @@ retrieveData = function () {
         type = parseInt(localStorage.getItem("typing"));
         stage = parseInt(localStorage.getItem("phase"));
         hp = maxHp = parseInt(localStorage.getItem("health"));
+        inv[0] = parseInt(localStorage.getItem("rare"));
+        inv[1] = parseInt(localStorage.getItem("poke"));
+        inv[2] = parseInt(localStorage.getItem("potion"));
         alert("Dados recuperados!");
 
         //reiniciar a HUD
@@ -104,6 +110,9 @@ resetData = function () {
     localStorage.setItem("typing", 0);
     localStorage.setItem("phase", 0);
     localStorage.setItem("health", 0);
+    localStorage.setItem("rare", 0);
+    localStorage.setItem("poke", 0);
+    localStorage.setItem("potion", 1);
     window.name = "unsaved"
     alert("Dados apagados!")
 }
