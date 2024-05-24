@@ -158,3 +158,23 @@ tituloNovo = function () {
     else titulo.innerHTML = "Evolua e vença!";
 }
 
+//DEX NEW
+// 7 vars
+/*
+const buddy = {
+    nickname: "A",
+    ID: 1,
+    lvl:1,
+    stage:1,
+    type:1,
+    hp:100,
+    maxHp:100,
+
+}
+
+team[3];
+
+team[0] = new buddy("Lagartixa", 1,1, 1,1,100,100)
+
+
+*/

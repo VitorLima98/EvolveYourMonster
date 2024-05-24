@@ -2,7 +2,7 @@
 //item 1: pokeball
 //item 2: potion
 
-let inv = [0, 0, 1, 0]
+let inv = [0, 0, 1, 0];
 
 checkinv = function(){
 if (inv[0] <=0) rarecandy.style.display = "none";
