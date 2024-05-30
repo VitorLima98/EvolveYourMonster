@@ -1,19 +1,19 @@
  
 poke[0].onclick = function(){
+  alert(myTeam[selected].nickname + " agora vai descansar!");
   selected=0;
-  alert("TROCANDO PARA O MAIN")
   swapPoke();
 }
 
 poke[1].onclick = function(){
+  alert(myTeam[selected].nickname + " agora vai descansar!");
   selected=1;
-  alert("TROCANDO PARA O SEGUNDO")
   swapPoke();
 }
 
 poke[2].onclick = function(){
+  alert(myTeam[selected].nickname + " agora vai descansar!");
   selected=2;
-  alert("TROCANDO PARA O TERCEIRO")
   swapPoke();
 }
 
@@ -23,7 +23,7 @@ checkTeam = function(){
 }
 
 swapPoke = function(){
-  alert("swapping")
+  alert("Vamos nessa, " + myTeam[selected].nickname + "!!");
   playerImage();
   especie()
 

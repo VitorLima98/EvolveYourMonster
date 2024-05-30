@@ -6,7 +6,7 @@ var nick = false
 
 //DEX NEW
 
-function Buddy(nickname, hasNick, ID, xp, lvl, stage, type, hp, maxHp) {
+function Buddy(nickname, hasNick, ID, xp, lvl, stage, type, hp, maxHp, image) {
     this.nickname = nickname;
     this.hasNick = hasNick
     this.ID =  ID;
@@ -16,6 +16,7 @@ function Buddy(nickname, hasNick, ID, xp, lvl, stage, type, hp, maxHp) {
     this.type = type;
     this.hp = hp;
     this.maxHp = maxHp;
+    this.image=image
   }
 
 
@@ -27,10 +28,9 @@ grass.onclick = function () {
     if(apelido == "Bulbasaur") nick=false;
     else nick=true;
 
-    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,1,100,100);
+    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,1,100,100,"./001.png");
     start();
     titulo.classList.add('green_text_animated')
-    monster.src = "./001.png";
 }
 
 fire.onclick = function () {
@@ -39,10 +39,9 @@ fire.onclick = function () {
     if(apelido == "Charmander") nick=false;
     else nick=true;
 
-    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,2,100,100);
+    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,2,100,100,"./004.png");
     start();
     titulo.classList.add('fire_text_animated')
-    monster.src = "./004.png";
 }
 
 water.onclick = function () {
@@ -51,10 +50,9 @@ water.onclick = function () {
     if(apelido == "Squirtle") nick=false;
     else nick=true;
 
-    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,3,100,100);
+    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,3,100,100,"./007.png");
     start();
     titulo.classList.add('water_text_animated')
-    monster.src = "./007.png";
 }
 
 ghost.onclick = function () {
@@ -63,12 +61,18 @@ ghost.onclick = function () {
     if(apelido == "Ghastly") nick=false;
     else nick=true;
 
-    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,4,100,100);
+    myTeam[0] = new Buddy(apelido, nick,1,0,1,1,4,100,100,"./0092.png");
     start();
-    monster.src = "./0092.png";
     playerImage();
     titulo.classList.add('ghost_text_animated')
     
+}
+
+secret.onclick = function(){
+    myTeam[1] = new Buddy("Biruleibe", true,1,0,1,3,2,100,100);
+    poke[1].style.display = "inline";
+    poke[1].innerHTML=myTeam[1].nickname;
+    secret.disabled = true;
 }
 
 // ATUALIZAR NOME DA ESPECIE
@@ -141,7 +145,7 @@ especie = function () {
         nomeEspecie.classList.add('rainbow_text_animated')
     }
 
-    if(myTeam[selected].hasNick) nomeEspecie.innerHTML = myTeam[selected].nickname + " , " + nomeEspecie.innerHTML;
+    if(myTeam[selected].hasNick) nomeEspecie.innerHTML = myTeam[selected].nickname + ", o " + nomeEspecie.innerHTML;
 }
 
 evoluir = function () {

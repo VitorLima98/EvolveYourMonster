@@ -76,8 +76,8 @@ start = function () {
 
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
 
-    myTeam[1] = new Buddy("Biruleibe", true,1,0,1,1,2,100,100);
-    poke[1].style.display = "inline";
+
+    
 
 
 }
