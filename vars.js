@@ -25,7 +25,7 @@ var pokeball = document.getElementById("pb");
 var potion = document.getElementById("pt");
 
 //team
-let poke = [1,1,1];
+let poke = [,,];
 poke[0] = document.getElementById("poke0");
 poke[1] = document.getElementById("poke1");
 poke[2] = document.getElementById("poke2");

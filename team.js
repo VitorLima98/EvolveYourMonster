@@ -1,13 +1,26 @@
  
-team [3] = poke();
+poke[0].onclick = function(){
+  selected=0;
+  alert("TROCANDO PARA O MAIN")
+  swapPoke();
+}
 
-const poke = {
-    id: "000",
-    name: '',
-    level: 1,
-    XP: 0,
-    HP: 1,
-    MAXHP: 2,
-    ATT: 1,
-    DEF: 1
-  }
+poke[1].onclick = function(){
+  selected=1;
+  alert("TROCANDO PARA O SEGUNDO")
+  swapPoke();
+}
+
+poke[2].onclick = function(){
+  selected=2;
+  alert("TROCANDO PARA O TERCEIRO")
+  swapPoke();
+}
+
+
+swapPoke = function(){
+
+
+
+
+}

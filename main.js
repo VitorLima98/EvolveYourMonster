@@ -70,7 +70,8 @@ start = function () {
     HUD.style.display = "block";
     treinar.innerHTML = "XP: " + count;
     treinar.style.display = "block"; 
-
+    poke[0].style.display = "inline";
+    poke[0].innerHTML = myTeam[0].nickname;
     shot.src = "./att" + type + ".png";
 
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;

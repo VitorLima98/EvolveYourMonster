@@ -146,9 +146,9 @@ especie = function () {
 
 evoluir = function () {
     myTeam[selected].stage++;
-    maxHp += 25;
-    hp = barraVida.value = barraVida.max = maxHp;
-    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
+    myTeam[selected].maxHp += 25;
+    myTeam[selected].hp = barraVida.value = barraVida.max = myTeam[selected].maxHp;
+    vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + maxHp;
 
     shotDuration *= 0.8;
     monster.animate([{ transform: "rotateY(720deg)" }], 300);
