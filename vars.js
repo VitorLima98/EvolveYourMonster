@@ -66,6 +66,8 @@ enemyPic.style.height = enemyPic.style.width = "20vh";
 shot.style.height = eShot.style.height = "10vh";
 shot.style.width = eShot.style.width = "10vh";
 
+//Poké
+
 
 //Armazenar dados
 keepData = function () {

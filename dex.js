@@ -1,3 +1,21 @@
+
+//Team
+var myTeam = [ {}, {}, {}]
+
+//DEX NEW
+
+function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
+    this.nickname = nickname;
+    this.ID =  ID;
+    this.lvl = lvl;
+    this.stage = stage;
+    this.type = type;
+    this.hp = hp;
+    this.maxHp = maxHp;
+  }
+
+
+
 // ESCOLHA DO INICIAL
 grass.onclick = function () {
     type = 1;
@@ -158,21 +176,6 @@ tituloNovo = function () {
     else titulo.innerHTML = "Evolua e vença!";
 }
 
-//DEX NEW
-// 7 vars
-
-
-
-function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
-    this.nickname = nickname;
-    this.ID =  ID;
-    this.lvl = lvl;
-    this.stage = stage;
-    this.type = type;
-    this.hp = hp;
-    this.maxHp = maxHp;
-  }
-  var myTeam = [new Buddy("Bolinha", 1, 1, 1, 1, 99, 100), new Buddy("Sapão", 5, 3, 1, 2, 120, 250), new Buddy()];
 
  
 
