@@ -72,9 +72,13 @@ start = function () {
     treinar.style.display = "block"; 
     poke[0].style.display = "inline";
     poke[0].innerHTML = myTeam[0].nickname;
-    shot.src = "./att" + type + ".png";
+    shot.src = "./att" + myTeam[selected].type + ".png";
 
     vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
+
+    myTeam[1] = new Buddy("Biruleibe", true,1,0,1,1,2,100,100);
+    poke[1].style.display = "inline";
+
 
 }
 

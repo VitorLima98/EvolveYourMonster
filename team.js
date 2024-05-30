@@ -17,10 +17,15 @@ poke[2].onclick = function(){
   swapPoke();
 }
 
+checkTeam = function(){
+
+
+}
 
 swapPoke = function(){
-
-
+  alert("swapping")
+  playerImage();
+  especie()
 
 
 }

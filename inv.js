@@ -4,6 +4,8 @@
 
 let inv = [0, 0, 1, 0];
 
+
+
 checkinv = function(){
 if (inv[0] <=0) rarecandy.style.display = "none";
 else{
