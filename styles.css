@@ -292,6 +292,22 @@ button {
     left: 0vw;
 }
 
+#team{
+    position: absolute;
+    bottom: 40vh;
+    left: 0vw;
+}
+
+#poke0{
+    display: none;
+}
+#poke1{
+    display: none;
+}
+#poke2{
+    display: none;
+}
+
 /*barra de vida*/
 progress {
     border: 20px;

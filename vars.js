@@ -24,6 +24,12 @@ var rarecandy = document.getElementById("rc");
 var pokeball = document.getElementById("pb");
 var potion = document.getElementById("pt");
 
+//team
+let poke = [1,1,1];
+poke[0] = document.getElementById("poke0");
+poke[1] = document.getElementById("poke1");
+poke[2] = document.getElementById("poke2");
+
 var chooseEvolve = document.getElementById("evoluir");
 
 var PRIME = document.getElementById("reset"), reset = 0;
