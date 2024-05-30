@@ -164,13 +164,13 @@ tituloNovo = function () {
 
 
 function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
-    this.nickname = "A";
-    this.ID =  1;
-    this.lvl = 1;
-    this.stage = 1;
-    this.type = 1;
-    this.hp = 100;
-    this.maxHp = 100;
+    this.nickname = nickname;
+    this.ID =  ID;
+    this.lvl = lvl;
+    this.stage = stage;
+    this.type = type;
+    this.hp = hp;
+    this.maxHp = maxHp;
   }
   var myTeam = [new Buddy("Bolinha", 1, 1, 1, 1, 99, 100), new Buddy("Sapão", 5, 3, 1, 2, 120, 250), new Buddy()];
 
