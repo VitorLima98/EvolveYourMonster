@@ -20,28 +20,34 @@ function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
 grass.onclick = function () {
     //type = 1;
     let apelido = prompt("Escolha um apelido para seu companheiro!", "Bulbasauro");
-    myTeam[0] = new Buddy("apelido", 1,1,1,1,100,100);
+    myTeam[0] = new Buddy(apelido, 1,1,1,1,100,100);
     start();
     titulo.classList.add('green_text_animated')
     monster.src = "./001.png";
 }
 
 fire.onclick = function () {
-    type = 2;
+    //type = 2;
+    let apelido = prompt("Escolha um apelido para seu companheiro!", "Charmander");
+    myTeam[0] = new Buddy(apelido, 1,1,1,1,100,100);
     start();
     titulo.classList.add('fire_text_animated')
     monster.src = "./004.png";
 }
 
 water.onclick = function () {
-    type = 3;
+    //type = 3;
+    let apelido = prompt("Escolha um apelido para seu companheiro!", "Squirtle");
+    myTeam[0] = new Buddy(apelido, 1,1,1,1,100,100);
     start();
     titulo.classList.add('water_text_animated')
     monster.src = "./007.png";
 }
 
 ghost.onclick = function () {
-    type = 4;
+    //type = 4;
+    let apelido = prompt("Escolha um apelido para seu companheiro!", "Ghastly");
+    myTeam[0] = new Buddy(apelido, 1,1,1,1,100,100);
     start();
     monster.src = "./0092.png";
     playerImage();
