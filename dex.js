@@ -160,21 +160,21 @@ tituloNovo = function () {
 
 //DEX NEW
 // 7 vars
-/*
-const buddy = {
-    nickname: "A",
-    ID: 1,
-    lvl:1,
-    stage:1,
-    type:1,
-    hp:100,
-    maxHp:100,
-
-}
-
-team[3];
-
-team[0] = new buddy("Lagartixa", 1,1, 1,1,100,100)
 
 
-*/
+
+function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
+    this.nickname = "A";
+    this.ID =  1;
+    this.lvl = 1;
+    this.stage = 1;
+    this.type = 1;
+    this.hp = 100;
+    this.maxHp = 100;
+  }
+  var myTeam = [new Buddy("Bolinha", 1, 1, 1, 1, 99, 100), new Buddy("Sapão", 5, 3, 1, 2, 120, 250), new Buddy()];
+
+ 
+
+
+
