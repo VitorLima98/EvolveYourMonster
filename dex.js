@@ -18,7 +18,9 @@ function Buddy(nickname, ID, lvl, stage, type, hp, maxHp) {
 
 // ESCOLHA DO INICIAL
 grass.onclick = function () {
-    type = 1;
+    //type = 1;
+    let apelido = prompt("Escolha um apelido para seu companheiro!", "Bulbasauro");
+    myTeam[0] = new Buddy("apelido", 1,1,1,1,100,100);
     start();
     titulo.classList.add('green_text_animated')
     monster.src = "./001.png";
