@@ -56,12 +56,23 @@ potion.onclick = function (){
 }
 
 pokeball.onclick = function (){
+
+    var monsterName = "MissingNo"
+     
+    if (etype === 1) text += 'planta...';
+    else if (etype === 2) text += 'fogo...';
+    else text += 'água...';
     
     inv[1]--;
 
     if( Math.ceil(Math.random() * 20) ===5){
         
-        alert("Boa! Cacturne foi capturado!");
+        alert("Boa! "+ monsterName + " foi capturado!");
+        if(Math.ceil(Math.random() * 2)===2){
+            let prize = Math.ceil(Math.random() * 5) +5
+            alert("Conseguiu "+prize+" rare candies!")
+           inv[0]+=prize; 
+        } 
 
     }
     else alert ("Cacturne fugiu!");
