@@ -6,8 +6,9 @@ if (window.name === "saved") {
 }
 
 treinar.onclick = function () {
-    count += 1 + reset;
-    treinar.innerHTML = "XP: " + count;
+    count++;
+    myTeam[selected].xp += 1 + reset;
+    treinar.innerHTML = "XP: " + myTeam[selected].xp;
     this.animate([{ scale: 1.03 }], 300);
     treinar.disabled=true;
     setTimeout(function () { treinar.disabled = false; }, 800);
@@ -42,10 +43,10 @@ avoid.onclick = function () {
 }
 
 checkEvolve = function () {
-    if (type === 4 && count > stage * 16 && stage < 5) {
+    if (type === 4 && myTeam[selected].xp > stage * 16 && stage < 5) {
         chooseEvolve.style.display = "inline";
     }
-    else if ((count > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
+    else if ((myTeam[selected].xp > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
         chooseEvolve.style.display = "inline";
     }
     else {
@@ -68,7 +69,7 @@ start = function () {
     monster.classList.add('monster');
     document.getElementById('escolherBicho').style.display = "none";
     HUD.style.display = "block";
-    treinar.innerHTML = "XP: " + count;
+    treinar.innerHTML = "XP: " + myTeam[selected].xp;
     treinar.style.display = "block"; 
     poke[0].style.display = "inline";
     poke[0].innerHTML = myTeam[0].nickname;
@@ -91,10 +92,10 @@ restoreHUD = function () {
     tituloNovo();
     monster.style.position = '';
     chooseFight.style.display = 'none';
-    treinar.innerHTML = "XP: " + count;
+    treinar.innerHTML = "XP: " + myTeam[selected].xp;
     vida.style.position = 'initial';
-    hp = maxHp;
-    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
+    //myTeam[selected].hp = myTeam[selected].maxHp;
+    vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
     treinar.style.display = "block";
 }
 
@@ -106,13 +107,15 @@ tituloNovo = function () {
 
 PRIME.onclick = function () {
     alert("Resetando!");
-    reset+=0.5;
+    reset+=0.25;
 
     console.log(reset);
-    maxHp = 100 + 3 * reset;
 
-    count = 1;
-    stage = 1;
+    selected=0;
+
+    myTeam[selected].maxHp = 100 + 3 * reset;
+    myTeam[selected].xp = 1;
+    myTeam[selected].stage = 1;
 
     HUD.style.display = "none";
     vida.style.display = "none";

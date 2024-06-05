@@ -152,7 +152,7 @@ evoluir = function () {
     myTeam[selected].stage++;
     myTeam[selected].maxHp += 25;
     myTeam[selected].hp = barraVida.value = barraVida.max = myTeam[selected].maxHp;
-    vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + maxHp;
+    vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
 
     shotDuration *= 0.8;
     monster.animate([{ transform: "rotateY(720deg)" }], 300);

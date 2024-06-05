@@ -30,8 +30,8 @@ rarecandy.onclick = function(){
     inv[0] -=1;
     rarecandy.innerHTML= "Doce Raro x" + inv[0];
 
-    count+=25;
-    treinar.innerHTML = "XP: " + count;
+    myTeam[selected].xp+=25;
+    treinar.innerHTML = "XP: " + myTeam[selected].xp;
     }
     checkinv();
 

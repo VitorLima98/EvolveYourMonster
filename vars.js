@@ -56,6 +56,9 @@ var danoFeito, danoRecebido;
 //save system
 var saved = false;
 
+// NEED TO REWORK SAVE SYSTEM, SO THE MONS STAY SAVED 
+// SPLIT BUDDY ARRAY INTO PIECES AND SAVE EACH ONE INDIVIDUALLY
+
 HUD.style.display = "none";
 fightScreen.style.display = "none";
 chooseFight.style.display = "none";

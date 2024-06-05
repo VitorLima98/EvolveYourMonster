@@ -25,7 +25,8 @@ checkTeam = function(){
 swapPoke = function(){
   alert("Vamos nessa, " + myTeam[selected].nickname + "!!");
   playerImage();
-  especie()
-
+  especie();
+  treinar.innerHTML = "XP: " + myTeam[selected].xp;
+  vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
 
 }

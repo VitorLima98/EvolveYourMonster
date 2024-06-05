@@ -6,8 +6,8 @@ chooseFight.onclick = function () {
     chooseFight.style.display = "none";
     avoid.style.display = "none";
     att.disabled = false;
-    e_Hp = max_e_Hp + count % 5 - 3;
-    hp = maxHp;
+    e_Hp = max_e_Hp + myTeam[selected].xp % 5 - 3;
+    //hp = maxHp;
 
 
     nomeEspecie.style.display = "none";
@@ -20,7 +20,7 @@ chooseFight.onclick = function () {
     barraVida.style.position = 'absolute';
     barraVida.style.bottom = '10vh';
     barraVida.style.left = '5vw';
-    barraVida.innerHTML = "Vida: " + hp + "/ " + maxHp;
+    barraVida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
 
     monster.style.position = 'absolute';
     monster.style.bottom = '15vh';
@@ -44,7 +44,7 @@ chooseFight.onclick = function () {
 att.onclick = function () {
     att.disabled = true;
     danoFeito = Math.ceil(Math.random() * 6);
-    danoFeito += count * stage * effectiveness[type][etype];
+    danoFeito += myTeam[selected].xp * stage * effectiveness[type][etype];
     e_Hp -= danoFeito;
 
     if (e_Hp > 0) {
@@ -56,8 +56,8 @@ att.onclick = function () {
 }
 
 hpBarCreate = function () {
-    barraVida.value = hp;
-    barraVida.max = maxHp;
+    barraVida.value = myTeam[selected].hp;
+    barraVida.max = myTeam[selected].maxHp;
 
     barraInimigo.value = barraInimigo.max = max_e_Hp;
 }
@@ -87,7 +87,7 @@ victory = function () {
     fightScreen.style.display = "none";
     att.style.display = "none";
     alert("Vitoria! Recompensa: 10 XP");
-    count += 10;
+    myTeam[selected].xp += 12;
     restoreHUD();
     checkEvolve();
     max_e_Hp += 110;
@@ -128,7 +128,7 @@ enemyAttack = function () {
         duration: 100
     });
     danoRecebido = (1 + Math.floor(Math.random() * 10)) + 10;
-    hp -= danoRecebido;
+    myTeam[selected].hp -= danoRecebido;
 
     eShot.style.position = 'absolute';
     eShot.style.top = enemy.style.top;
@@ -212,9 +212,10 @@ enemyHit = function () {
 
 playerHit = function () {
     monster.animate([{ scale: 0.93 }], 300);
-    vida.innerHTML = "Vida: " + hp + "/ " + maxHp;
-    barraVida.value = hp;
-    if (hp <= 0) {
+    vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
+    barraVida.value = myTeam[selected].hp;
+    if (myTeam[selected].hp <= 0) {
+        myTeam[selected].hp=0;
         alert("Derrota!");
         escapeBattle();
     }
