@@ -2,7 +2,7 @@
 //item 1: pokeball
 //item 2: potion
 
-let inv = [0, 0, 1, 0];
+let inv = [0, 10, 1, 0];
 
 
 
@@ -52,5 +52,21 @@ potion.onclick = function (){
 
     }
    
+    checkinv();
+}
+
+pokeball.onclick = function (){
+    
+    inv[1]--;
+
+    if( Math.ceil(Math.random() * 20) ===5){
+        
+        alert("Boa! Cacturne foi capturado!");
+
+    }
+    else alert ("Cacturne fugiu!");
+
+
+
     checkinv();
 }
