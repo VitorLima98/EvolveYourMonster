@@ -69,10 +69,13 @@ ghost.onclick = function () {
 }
 
 secret.onclick = function(){
+    if (Object.keys(myTeam[1]).length == 0){
     myTeam[1] = new Buddy("Biruleibe", true,6,41,1,3,2,146,150);
     poke[1].style.display = "inline";
     poke[1].innerHTML=myTeam[1].nickname;
     secret.disabled = true;
+    }
+   
 }
 
 // ATUALIZAR NOME DA ESPECIE
