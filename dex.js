@@ -69,7 +69,7 @@ ghost.onclick = function () {
 }
 
 secret.onclick = function(){
-    myTeam[1] = new Buddy("Biruleibe", true,1,0,1,3,2,100,100);
+    myTeam[1] = new Buddy("Biruleibe", true,6,41,1,3,2,146,150);
     poke[1].style.display = "inline";
     poke[1].innerHTML=myTeam[1].nickname;
     secret.disabled = true;
