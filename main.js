@@ -43,10 +43,10 @@ avoid.onclick = function () {
 }
 
 checkEvolve = function () {
-    if (type === 4 && myTeam[selected].xp > stage * 16 && stage < 5) {
+    if (type === 4 && myTeam[selected].xp > myTeam[selected].stage * 16 && myTeam[selected].stage < 5) {
         chooseEvolve.style.display = "inline";
     }
-    else if ((myTeam[selected].xp > ((type - 1) * 6 + 32 * stage)) && stage < 5) {
+    else if ( (myTeam[selected].xp > ((type - 1) * 6 + 32 * myTeam[selected].stage)) && myTeam[selected].stage < 5) {
         chooseEvolve.style.display = "inline";
     }
     else {
