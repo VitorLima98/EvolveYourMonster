@@ -152,7 +152,7 @@ especie = function () {
         }
     }
     //WATER
-    if (myTeam[selected].type === 2){
+    if (myTeam[selected].type === 3){
         if (myTeam[selected].stage === 1){
         nomeEspecie.innerHTML = "Squirtle";
         }
