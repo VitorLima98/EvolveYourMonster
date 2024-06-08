@@ -84,52 +84,105 @@ especie = function () {
     nomeEspecie.className = '';
 
     //GRASS
-    if (myTeam[selected].type === 1 && myTeam[selected].stage === 1)
+    if (myTeam[selected].type === 1){
+        if (myTeam[selected].stage === 1){
         nomeEspecie.innerHTML = "Bulbasaur";
-    else if (myTeam[selected].type === 1 && myTeam[selected].stage === 2)
+        }
+        else if (myTeam[selected].stage === 2){
         nomeEspecie.innerHTML = "Ivysaur";
-    else if (myTeam[selected].type === 1 && myTeam[selected].stage === 3)
+        if(!myTeam[selected].hasNick) myTeam[selected].nickname = "Ivysaur";
+        poke[selected].innerHTML="Ivysaur";
+        }
+        else if (myTeam[selected].stage === 3){
         nomeEspecie.innerHTML = "Venusaur";
-    else if (myTeam[selected].type === 1 && myTeam[selected].stage === 4) {
+        if(!myTeam[selected].hasNick){
+        myTeam[selected].nickname = "Venusaur";
+        poke[selected].innerHTML="Venusaur";}
+        }
+        else if (myTeam[selected].stage === 4){
         nomeEspecie.innerHTML = "Mega Venusaur";
-        nomeEspecie.classList.add('green_text_animated')
-    }
-    else if (myTeam[selected].type === 1 && myTeam[selected].stage === 5) {
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('green_text_animated');
+        if(!myTeam[selected].hasNick) {
+        myTeam[selected].nickname = "Mega Venusaur";
+        poke[selected].innerHTML="Mega Venusaur";}
+        }
+        else if (myTeam[selected].stage === 5){
         nomeEspecie.innerHTML = "G-MAX Venusaur";
         nomeEspecie.className = '';
         nomeEspecie.classList.add('rainbow_text_animated')
+        if(!myTeam[selected].hasNick){
+            myTeam[selected].nickname = "G-MAX Venusaur";
+            poke[selected].innerHTML = "G-MAX Venusaur";}
+        }
     }
+    
+
     //FIRE
-    if (myTeam[selected].type === 2 && myTeam[selected].stage === 1)
+    if (myTeam[selected].type === 2){
+        if (myTeam[selected].stage === 1){
         nomeEspecie.innerHTML = "Charmander";
-    else if (myTeam[selected].type === 2 && myTeam[selected].stage === 2)
+        }
+        else if (myTeam[selected].stage === 2){
         nomeEspecie.innerHTML = "Charmeleon";
-    else if (myTeam[selected].type === 2 && myTeam[selected].stage === 3)
+        if(!myTeam[selected].hasNick) myTeam[selected].nickname = "Charmeleon";
+        poke[selected].innerHTML="Charmeleon";
+        }
+        else if (myTeam[selected].stage === 3){
         nomeEspecie.innerHTML = "Charizard";
-    else if (myTeam[selected].type === 2 && myTeam[selected].stage === 4) {
+        if(!myTeam[selected].hasNick){
+        myTeam[selected].nickname = "Charizard";
+        poke[selected].innerHTML="Charizard";}
+        }
+        else if (myTeam[selected].stage === 4){
         nomeEspecie.innerHTML = "Mega Charizard";
-        nomeEspecie.classList.add('fire_text_animated')
-    }
-    else if (myTeam[selected].type === 2 && myTeam[selected].stage === 5) {
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('fire_text_animated');
+        if(!myTeam[selected].hasNick) {
+        myTeam[selected].nickname = "Mega Charizard";
+        poke[selected].innerHTML="Mega Charizard";}
+        }
+        else if (myTeam[selected].stage === 5){
         nomeEspecie.innerHTML = "G-MAX Charizard";
         nomeEspecie.className = '';
         nomeEspecie.classList.add('rainbow_text_animated')
+        if(!myTeam[selected].hasNick){
+            myTeam[selected].nickname = "G-MAX Charizard";
+            poke[selected].innerHTML = "G-MAX Charizard";}
+        }
     }
     //WATER
-    if (myTeam[selected].type === 3 && myTeam[selected].stage === 1)
+    if (myTeam[selected].type === 2){
+        if (myTeam[selected].stage === 1){
         nomeEspecie.innerHTML = "Squirtle";
-    else if (myTeam[selected].type === 3 && myTeam[selected].stage === 2)
+        }
+        else if (myTeam[selected].stage === 2){
         nomeEspecie.innerHTML = "Wartortle";
-    else if (myTeam[selected].type === 3 && myTeam[selected].stage === 3)
+        if(!myTeam[selected].hasNick) myTeam[selected].nickname = "Wartortle";
+        poke[selected].innerHTML="Wartortle";
+        }
+        else if (myTeam[selected].stage === 3){
         nomeEspecie.innerHTML = "Blastoise";
-    else if (myTeam[selected].type === 3 && myTeam[selected].stage === 4) {
+        if(!myTeam[selected].hasNick){
+        myTeam[selected].nickname = "Blastoise";
+        poke[selected].innerHTML="Blastoise";}
+        }
+        else if (myTeam[selected].stage === 4){
         nomeEspecie.innerHTML = "Mega Blastoise";
-        nomeEspecie.classList.add('water_text_animated')
-    }
-    else if (myTeam[selected].type === 3 && myTeam[selected].stage === 5) {
+        nomeEspecie.className = '';
+        nomeEspecie.classList.add('water_text_animated');
+        if(!myTeam[selected].hasNick) {
+        myTeam[selected].nickname = "Mega Blastoise";
+        poke[selected].innerHTML="Mega Blastoise";}
+        }
+        else if (myTeam[selected].stage === 5){
         nomeEspecie.innerHTML = "G-MAX Blastoise";
         nomeEspecie.className = '';
         nomeEspecie.classList.add('rainbow_text_animated')
+        if(!myTeam[selected].hasNick){
+            myTeam[selected].nickname = "G-MAX Blastoise";
+            poke[selected].innerHTML = "G-MAX Blastoise";}
+        }
     }
 
     //GHOST

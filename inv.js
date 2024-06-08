@@ -2,7 +2,7 @@
 //item 1: pokeball
 //item 2: potion
 
-let inv = [0, 10, 1, 0];
+let inv = [999, 10, 1, 0];
 
 
 
@@ -30,7 +30,7 @@ rarecandy.onclick = function(){
     inv[0] -=1;
     rarecandy.innerHTML= "Doce Raro x" + inv[0];
 
-    myTeam[selected].xp+=25;
+    myTeam[selected].xp+=75;
     treinar.innerHTML = "XP: " + myTeam[selected].xp;
     }
     checkinv();
