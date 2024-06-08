@@ -186,7 +186,7 @@ especie = function () {
     }
 
     //GHOST
-    if (myTeam[selected].type === ){
+    if (myTeam[selected].type === 4){
         if (myTeam[selected].stage === 1){
         nomeEspecie.innerHTML = "Ghasty";
         }
