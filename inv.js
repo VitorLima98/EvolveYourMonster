@@ -2,7 +2,7 @@
 //item 1: pokeball
 //item 2: potion
 
-let inv = [999, 10, 1, 0];
+let inv = [0, 11, 1, 0];
 
 
 
