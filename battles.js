@@ -7,6 +7,8 @@ chooseFight.onclick = function () {
     avoid.style.display = "none";
     att.disabled = false;
     e_Hp = max_e_Hp + myTeam[selected].xp % 5 - 3;
+        
+
     //hp = maxHp;
 
 

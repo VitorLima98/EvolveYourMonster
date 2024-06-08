@@ -59,9 +59,9 @@ pokeball.onclick = function (){
 
     var monsterName = "MissingNo"
      
-    if (etype === 1) text += 'planta...';
-    else if (etype === 2) text += 'fogo...';
-    else text += 'água...';
+    if (etype === 1) ;
+    else if (etype === 2) ;
+    else ;
     
     inv[1]--;
 

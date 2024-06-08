@@ -28,5 +28,6 @@ swapPoke = function(){
   especie();
   treinar.innerHTML = "XP: " + myTeam[selected].xp;
   vida.innerHTML = "Vida: " + myTeam[selected].hp + "/ " + myTeam[selected].maxHp;
+  shot.src = "./att" + myTeam[selected].type + ".png";
 
 }
