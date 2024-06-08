@@ -81,6 +81,7 @@ secret.onclick = function(){
 // ATUALIZAR NOME DA ESPECIE
 especie = function () {
     nomeEspecie.style.display = "block";
+    nomeEspecie.className = '';
 
     //GRASS
     if (myTeam[selected].type === 1 && myTeam[selected].stage === 1)
